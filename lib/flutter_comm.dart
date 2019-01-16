@@ -1,4 +1,6 @@
 library flutter_comm;
 
-export 'Test.dart';
+export 'CommDialog.dart';
+export 'CommFunction.dart';
+export 'CommWidget.dart';
 
