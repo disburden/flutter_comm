@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
 /// 设置align和padding
-class AlignPadding extends StatelessWidget {
+class FCAlignPadding extends StatelessWidget {
 	final Alignment align;
 	final EdgeInsetsGeometry gap;
 	final Widget widget;
 
-	AlignPadding({@required this.align, @required this.gap, @required this.widget});
+	FCAlignPadding({@required this.align, @required this.gap, @required this.widget});
 
 	@override
 	Widget build(BuildContext context) {
@@ -22,7 +22,7 @@ class AlignPadding extends StatelessWidget {
 
 
 /// 圆角
-class RoundedCorner extends StatelessWidget {
+class FCRoundedCorner extends StatelessWidget {
 	/// 点击事件
 	final GestureTapCallback onClickListener;
 
@@ -40,7 +40,7 @@ class RoundedCorner extends StatelessWidget {
 
 	final BoxBorder border;
 
-	RoundedCorner({@required this.child, this.onClickListener, this.padding, this.backGroundColor, this.circular, this.border});
+	FCRoundedCorner({@required this.child, this.onClickListener, this.padding, this.backGroundColor, this.circular, this.border});
 
 	@override
 	Widget build(BuildContext context) {
