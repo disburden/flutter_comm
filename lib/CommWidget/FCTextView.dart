@@ -43,7 +43,16 @@ class FCTextView extends StatefulWidget {
 		this.gap = const EdgeInsets.all(8.0),
 		this.cornerRadius=.0
 	}) {
-		_contrl == controller ?? TextEditingController();
+//		this._contrl == controller ?? TextEditingController();
+
+//		this._contrl = controller;
+//		if (this._contrl == null){
+//			this._contrl = TextEditingController();
+//		}
+		_contrl = controller;
+		if (_contrl == null){
+			_contrl = TextEditingController();
+		}
 	}
 
 	@override
