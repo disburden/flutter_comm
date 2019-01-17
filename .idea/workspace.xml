@@ -7,7 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2b6a51e5-9f90-4b04-b5e7-afbfbd28ed97" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/lib/CommWidget/CoreWidget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/CommWidget/CoreWidget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/CommWidget/FCTextView.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/CommWidget/FCTextView.dart" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.dart_tool/" />
     <ignored path="$PROJECT_DIR$/.idea/" />
@@ -64,8 +64,8 @@
       <file leaf-file-name="FCTextView.dart" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/CommWidget/FCTextView.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="45" column="41" selection-start-line="45" selection-start-column="41" selection-end-line="45" selection-end-column="41" />
+            <state relative-caret-position="270">
+              <caret line="40" column="46" lean-forward="true" selection-start-line="40" selection-start-column="46" selection-end-line="40" selection-end-column="46" />
             </state>
           </provider>
         </entry>
@@ -138,14 +138,14 @@
         <option value="$PROJECT_DIR$/lib/CommWidget/FCAlignPadding.dart" />
         <option value="$PROJECT_DIR$/lib/CommWidget/FCRoundedCorner.dart" />
         <option value="$PROJECT_DIR$/lib/flutter_comm.dart" />
-        <option value="$PROJECT_DIR$/lib/CommWidget/FCTextView.dart" />
         <option value="$PROJECT_DIR$/lib/CommWidget/CoreWidget.dart" />
+        <option value="$PROJECT_DIR$/lib/CommWidget/FCTextView.dart" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="331" />
-    <option name="y" value="40" />
+    <option name="x" value="161" />
+    <option name="y" value="26" />
     <option name="width" value="1280" />
     <option name="height" value="777" />
   </component>
@@ -276,7 +276,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="331" y="40" width="1280" height="777" extended-state="0" />
+    <frame x="161" y="26" width="1280" height="777" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -288,11 +288,11 @@
       <window_info anchor="bottom" id="Dart Analysis" order="7" weight="0.32928678" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32776934" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32776934" />
       <window_info anchor="right" id="Flutter Outline" order="3" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25767368" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25767368" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
@@ -445,8 +445,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/CommWidget/FCTextView.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="45" column="41" selection-start-line="45" selection-start-column="41" selection-end-line="45" selection-end-column="41" />
+        <state relative-caret-position="270">
+          <caret line="40" column="46" lean-forward="true" selection-start-line="40" selection-start-column="46" selection-end-line="40" selection-end-column="46" />
         </state>
       </provider>
     </entry>
