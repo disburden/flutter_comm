@@ -1,6 +1,6 @@
 library flutter_comm;
 
-export 'CommDialog.dart';
-export 'CommFunction.dart';
-export 'CommWidget/CoreWidget.dart';
+
+export 'package:flutter_comm/CommFunction/CoreFunction.dart';
+export 'package:flutter_comm/CommWidget/CoreWidget.dart';
 

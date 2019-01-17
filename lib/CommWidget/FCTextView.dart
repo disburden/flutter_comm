@@ -1,15 +1,34 @@
 import 'package:flutter/material.dart';
 
 class FCTextView extends StatefulWidget {
+	/// 高度
 	final double height;
+
+	/// 宽度
 	final double width;
+
+	/// textfield的控制器,如果外部传入就用外部,没有的话会自己创建一个
 	TextEditingController _contrl;
+
+	/// 文本改变时触发的事件
 	ValueChanged<String> textChanged;
+
+	/// 文本样式
 	TextStyle textStyle;
+
+	/// 背景色
 	Color backgroundColor;
+
+	/// 提示文本的样式
 	TextStyle hintStyel;
+
+	/// 提示文本
 	String hintStr;
+
+	/// 文本距离上下左右的间距
 	EdgeInsets gap;
+
+	/// 圆角
 	double cornerRadius;
 
 	/// 文字距离上下左右的边距
