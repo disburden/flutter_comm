@@ -6,7 +6,9 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2b6a51e5-9f90-4b04-b5e7-afbfbd28ed97" name="Default" comment="" />
+    <list default="true" id="2b6a51e5-9f90-4b04-b5e7-afbfbd28ed97" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.dart_tool/" />
     <ignored path="$PROJECT_DIR$/.idea/" />
     <ignored path="$PROJECT_DIR$/.pub/" />
@@ -20,7 +22,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="flutter_comm.dart" pinned="false" current-in-tab="false">
+      <file leaf-file-name="flutter_comm.dart" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/flutter_comm.dart">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="108">
@@ -44,7 +46,7 @@
       <file leaf-file-name="FCRoundedCorner.dart" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/CommWidget/FCRoundedCorner.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-158">
+            <state relative-caret-position="216">
               <caret line="12" selection-start-line="12" selection-end-line="12" />
             </state>
           </provider>
@@ -53,11 +55,8 @@
       <file leaf-file-name="CoreWidget.dart" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/CommWidget/CoreWidget.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
+            <state relative-caret-position="162">
               <caret line="10" selection-start-line="10" selection-end-line="10" />
-              <folding>
-                <element signature="e#0#144#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -74,7 +73,7 @@
       <file leaf-file-name="pubspec.yaml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pubspec.yaml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="99">
+            <state relative-caret-position="792">
               <caret line="44" column="25" selection-start-line="44" selection-start-column="25" selection-end-line="44" selection-end-column="25" />
             </state>
           </provider>
@@ -83,7 +82,7 @@
       <file leaf-file-name="text_field.dart" pinned="false" current-in-tab="false">
         <entry file="file://$USER_HOME$/install/flutter/packages/flutter/lib/src/material/text_field.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="139">
+            <state relative-caret-position="4968">
               <caret line="294" column="17" selection-start-line="294" selection-start-column="17" selection-end-line="294" selection-end-column="17" />
             </state>
           </provider>
@@ -92,16 +91,16 @@
       <file leaf-file-name="FCAlignPadding.dart" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/CommWidget/FCAlignPadding.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="94">
+            <state relative-caret-position="162">
               <caret line="9" column="34" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FCCommFunc.dart" pinned="false" current-in-tab="true">
+      <file leaf-file-name="FCCommFunc.dart" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/CommFunction/FCCommFunc.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="310">
+            <state relative-caret-position="522">
               <caret line="29" column="1" selection-start-line="29" selection-start-column="1" selection-end-line="29" selection-end-column="1" />
             </state>
           </provider>
@@ -150,8 +149,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="42" />
-    <option name="y" value="260" />
+    <option name="x" value="560" />
+    <option name="y" value="177" />
     <option name="width" value="1280" />
     <option name="height" value="777" />
   </component>
@@ -161,8 +160,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
       <pane id="Scope" />
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -170,29 +170,11 @@
               <item name="flutter_comm" type="b2602c69:ProjectViewProjectNode" />
               <item name="flutter_comm" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="flutter_comm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="flutter_comm" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="flutter_comm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="flutter_comm" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="CommFunction" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="flutter_comm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="flutter_comm" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="CommWidget" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
         <option name="show-excluded-files" value="false" />
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -293,7 +275,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="42" y="260" width="1280" height="777" extended-state="0" />
+    <frame x="560" y="177" width="1280" height="777" extended-state="0" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
@@ -304,11 +286,11 @@
       <window_info anchor="bottom" id="Dart Analysis" order="7" weight="0.32928678" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32776934" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.3262519" />
       <window_info anchor="right" id="Flutter Outline" order="3" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25767368" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26171243" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
@@ -333,6 +315,79 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/lib/flutter_comm.dart">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+          <folding>
+            <element signature="e#24#85#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/CommFunction/CoreFunction.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="12" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/CommWidget/FCRoundedCorner.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/CommWidget/CoreWidget.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/CommWidget/FCTextView.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pubspec.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="792">
+          <caret line="44" column="25" selection-start-line="44" selection-start-column="25" selection-end-line="44" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/install/flutter/packages/flutter/lib/src/material/text_field.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4968">
+          <caret line="294" column="17" selection-start-line="294" selection-start-column="17" selection-end-line="294" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/CommWidget/FCAlignPadding.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="34" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/CommFunction/FCCommFunc.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="522">
+          <caret line="29" column="1" selection-start-line="29" selection-start-column="1" selection-end-line="29" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/CommFunction/FCTime.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/flutter_comm.dart">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
           <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
           <folding>
@@ -352,24 +407,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="10" column="22" lean-forward="true" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#48#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/CommWidget.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="24" lean-forward="true" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/CommDialog.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/CommWidget.dart" />
+    <entry file="file://$PROJECT_DIR$/lib/CommDialog.dart" />
     <entry file="file://$PROJECT_DIR$/lib/CommFunction/FCCommFunc.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
@@ -381,9 +423,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#48#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -395,13 +434,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/CommWidget.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/CommWidget.dart" />
     <entry file="file://$USER_HOME$/install/flutter/packages/flutter/lib/src/foundation/basic_types.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
@@ -411,33 +444,19 @@
     </entry>
     <entry file="file://$USER_HOME$/install/flutter/packages/flutter/lib/src/material/text_field.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
+        <state relative-caret-position="4968">
           <caret line="294" column="17" selection-start-line="294" selection-start-column="17" selection-end-line="294" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pubspec.yaml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
+        <state relative-caret-position="792">
           <caret line="44" column="25" selection-start-line="44" selection-start-column="25" selection-end-line="44" selection-end-column="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/CommDialog.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/flutter_comm.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-          <folding>
-            <element signature="e#24#85#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/CommDialog.dart" />
     <entry file="file://$PROJECT_DIR$/lib/CommFunction/FCTime.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
@@ -447,24 +466,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/CommWidget/CoreWidget.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
+        <state relative-caret-position="162">
           <caret line="10" selection-start-line="10" selection-end-line="10" />
-          <folding>
-            <element signature="e#0#144#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/CommWidget/FCAlignPadding.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="94">
+        <state relative-caret-position="162">
           <caret line="9" column="34" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/CommWidget/FCRoundedCorner.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-158">
+        <state relative-caret-position="216">
           <caret line="12" selection-start-line="12" selection-end-line="12" />
         </state>
       </provider>
@@ -485,8 +501,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/CommFunction/FCCommFunc.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
+        <state relative-caret-position="522">
           <caret line="29" column="1" selection-start-line="29" selection-start-column="1" selection-end-line="29" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/flutter_comm.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+          <folding>
+            <element signature="e#24#85#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
