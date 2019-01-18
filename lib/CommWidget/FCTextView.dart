@@ -33,7 +33,9 @@ class FCTextView extends StatefulWidget {
 
 	/// 文字距离上下左右的边距
 
-	FCTextView({@required this.height, this.width,
+	FCTextView({
+		@required this.height,
+		this.width = 320.0,
 		TextEditingController controller,
 		this.textChanged,
 		this.textStyle,

@@ -11,3 +11,6 @@ export 'FCRoundedCorner.dart';
 
 /// 用textField制作textView,因为flutter自己没有textview组件
 export 'FCTextView.dart';
+
+/// 对话框
+export 'FCDialog.dart';
