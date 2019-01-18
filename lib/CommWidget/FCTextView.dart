@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
 class FCTextView extends StatefulWidget {
+
+	_FCTextViewState _state;
+
 	/// 高度
 	final double height;
 
@@ -31,7 +34,14 @@ class FCTextView extends StatefulWidget {
 	/// 圆角
 	double cornerRadius;
 
-	/// 文字距离上下左右的边距
+	/// 获取当前的文本属性
+	String get text => _contrl.text;
+
+	/// 重新设置文本内容
+	set text(String str){
+		_contrl.text = str;
+		_state.setState((){});
+	}
 
 	FCTextView({
 		@required this.height,
@@ -58,7 +68,11 @@ class FCTextView extends StatefulWidget {
 	}
 
 	@override
-	_FCTextViewState createState() => _FCTextViewState();
+	_FCTextViewState createState()  {
+		_state = _FCTextViewState();
+		return _state;
+	}
+
 }
 
 class _FCTextViewState extends State<FCTextView> {
@@ -88,5 +102,9 @@ class _FCTextViewState extends State<FCTextView> {
 				),
 			),
 		);
+	}
+
+	void update(){
+		setState(() {});
 	}
 }

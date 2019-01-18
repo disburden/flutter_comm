@@ -46,25 +46,41 @@ class _MyHomePageState extends State<MyHomePage> {
 		color: Colors.orange,
 	));
 
+	FCTextView tv;
+
 	void _incrementCounter() {
-		setState(() {
-			ad.addSubView(
-				child: Container(
-					color: Colors.black26,
-				),
-				height: 20.0,
-				width: 5.0,
-				top: 40.0,
-				left: 30.0
-			);
-//      _counter++;
-		});
+		print(tv.text);
+		tv.text = "hoho change to galking";
+//		setState(() {
+//			ad.addSubView(
+//				child: Container(
+//					color: Colors.black26,
+//				),
+//				height: 20.0,
+//				width: 5.0,
+//				top: 40.0,
+//				left: 30.0
+//			);
+//		});
 	}
 
 	@override
 	Widget build(BuildContext context) {
+
+
 		TextEditingController _ctrl = TextEditingController();
 		_ctrl.text = "disburden";
+
+		tv = FCTextView(
+			height: 150.0,
+			width: MediaQuery
+				.of(context)
+				.size
+				.width,
+			backgroundColor: Colors.cyan,
+			controller: _ctrl,
+		);
+
 		return Scaffold(
 			appBar: AppBar(
 				// Here we take the value from the MyHomePage object that was created by
@@ -77,15 +93,7 @@ class _MyHomePageState extends State<MyHomePage> {
 				child: Column(
 					mainAxisAlignment: MainAxisAlignment.center,
 					children: <Widget>[
-						FCTextView(
-							height: 150.0,
-							width: MediaQuery
-								.of(context)
-								.size
-								.width,
-							backgroundColor: Colors.cyan,
-							controller: _ctrl,
-						),
+						tv,
 						ad,
 //            Text(
 //              'You have pushed the button this many times:',
