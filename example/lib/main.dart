@@ -51,6 +51,11 @@ class _MyHomePageState extends State<MyHomePage> {
 	void _incrementCounter() {
 		print(tv.text);
 		tv.text = "hoho change to galking";
+
+		String dd = FCEncrypt.encodeUseBase64("hoho asdfwefasdfase asdfwe3");
+		print(dd);
+		String cc = FCEncrypt.decodeUseBase64(dd);
+		print(cc);
 //		setState(() {
 //			ad.addSubView(
 //				child: Container(
