@@ -14,3 +14,6 @@ export 'FCTextView.dart';
 
 /// 对话框
 export 'FCDialog.dart';
+
+/// 可以动态添加子组件
+export 'FCAddableWidget.dart';

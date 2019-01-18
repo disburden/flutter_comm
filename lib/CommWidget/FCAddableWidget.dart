@@ -8,8 +8,14 @@ class FCAddableWidget extends StatefulWidget {
 
 	FCAddableWidget({@required this.child});
 
-	void addSubView() {
-		state.addSubView();
+	void addSubView({@required Widget child, double top=0.0,double left=0.0,double height,double width}) {
+		state.addSubView(
+			child: child,
+			top: top,
+			left: left,
+			height: height,
+			width: width
+		);
 	}
 
 
@@ -38,12 +44,15 @@ class _FCAddableWidgetState extends State<FCAddableWidget> {
 		);
 	}
 
-	void addSubView() {
+	void addSubView({@required Widget child, double top=0.0,double left=0.0,double height,double width}) {
 		Positioned p = Positioned(
-			child: Text("disburden"),
-			top: 1.0,
-			left: 1.0,
-
+			child: SizedBox(
+				height: height,
+				width: width,
+				child: child,
+			),
+			top: top,
+			left: left,
 		);
 		children.add(p);
 		setState(() {});
