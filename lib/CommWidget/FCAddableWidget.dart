@@ -57,6 +57,4 @@ class _FCAddableWidgetState extends State<FCAddableWidget> {
 		children.add(p);
 		setState(() {});
 	}
-
-
 }

@@ -7,8 +7,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2b6a51e5-9f90-4b04-b5e7-afbfbd28ed97" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/CommFunction/FCCommFunc.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/CommFunction/FCCommFunc.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/CommWidget/FCAddableWidget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/CommWidget/FCAddableWidget.dart" afterDir="false" />
     </list>
@@ -109,8 +107,8 @@
       <file leaf-file-name="FCCommFunc.dart" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/CommFunction/FCCommFunc.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="490">
-              <caret line="35" column="8" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="8" />
+            <state relative-caret-position="331">
+              <caret line="40" column="26" lean-forward="true" selection-start-line="40" selection-start-column="26" selection-end-line="40" selection-end-column="26" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -121,8 +119,8 @@
       <file leaf-file-name="FCAddableWidget.dart" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/CommWidget/FCAddableWidget.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1080">
-              <caret line="60" selection-start-line="60" selection-end-line="60" />
+            <state relative-caret-position="331">
+              <caret line="36" column="5" lean-forward="true" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -326,7 +324,7 @@
       <window_info anchor="bottom" id="Dart Analysis" order="7" weight="0.32928678" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32776934" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.323217" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.323217" />
       <window_info anchor="right" id="Flutter Outline" order="3" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
@@ -680,8 +678,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/CommWidget/FCAddableWidget.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1080">
-          <caret line="60" selection-start-line="60" selection-end-line="60" />
+        <state relative-caret-position="331">
+          <caret line="36" column="5" lean-forward="true" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -697,8 +695,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/CommFunction/FCCommFunc.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="490">
-          <caret line="35" column="8" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="8" />
+        <state relative-caret-position="331">
+          <caret line="40" column="26" lean-forward="true" selection-start-line="40" selection-start-column="26" selection-end-line="40" selection-end-column="26" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>

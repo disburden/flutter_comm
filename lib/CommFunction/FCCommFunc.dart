@@ -37,4 +37,9 @@ class FCCommFunc {
 		math.Random random = math.Random();
 		return random.nextInt(max - min) + min;
 	}
+
+	static Color sjColor() {
+		math.Random random = math.Random();
+		return Color.fromARGB(255, random.nextInt(255), random.nextInt(255), random.nextInt(255));
+	}
 }
