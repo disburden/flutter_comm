@@ -17,3 +17,6 @@ export 'FCDialog.dart';
 
 /// 可以动态添加子组件
 export 'FCAddableWidget.dart';
+
+/// 带有一个图标的通知文本
+export 'FCIconNoti.dart';
