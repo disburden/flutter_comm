@@ -15,7 +15,7 @@ class FCIconNoti extends StatelessWidget {
 	final double gapBtwTitleBarAndContent;
 
 	/// 标题栏图标
-	final Icon icon;
+	final Widget icon;
 
 	/// 标题
 	final String title;
