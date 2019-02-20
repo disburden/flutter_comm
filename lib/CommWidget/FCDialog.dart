@@ -66,3 +66,8 @@ class _DialogComponent extends StatelessWidget {
 		);
 	}
 }
+
+/// 取消显示加载框
+void dismissLoadingDialog({@required BuildContext context}) {
+	Navigator.pop(context);
+}
