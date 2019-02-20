@@ -9,7 +9,7 @@ class FCEncrypt{
 	static String encryptUseAes(String originText,String keyStr) {
 		final key = Key.fromUtf8(keyStr);
 		final iv = IV.fromLength(16);
-		final encrypter = Encrypter(AES(key, iv));
+		final encrypter = Encrypter(AES(key, iv,mode: AESMode.ecb));
 
 		// encrypted是加密后的Encrypted对象,并不是String,需要用base64转成字符串
 		final encrypted = encrypter.encrypt(originText);
@@ -19,7 +19,7 @@ class FCEncrypt{
 	static String decryptUseAes(String encryptedStr,String keyStr){
 		final key = Key.fromUtf8(keyStr);
 		final iv = IV.fromLength(16);
-		final encrypter = Encrypter(AES(key, iv));
+		final encrypter = Encrypter(AES(key, iv,mode: AESMode.ecb));
 
 		// 解密的方法需要一个Encrypted对象,所以需要通过密文创建一个Encrypted对象
 		// 解密出来的直接就是字符串
