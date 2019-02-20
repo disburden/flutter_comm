@@ -71,7 +71,10 @@ class FCIconNoti extends StatelessWidget {
 						padding: titlePadding,
 						child: Row(
 							children: <Widget>[
-								icon,
+								Offstage(
+									offstage: icon==null,
+									child: icon,
+								),
 								Padding(
 									padding: EdgeInsets.only(left: gapBtwIconAndTitle),
 									child: Text(title, style: textStyle,),
