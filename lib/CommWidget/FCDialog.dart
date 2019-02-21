@@ -1,5 +1,14 @@
 import 'package:flutter/material.dart';
 
+typedef InputDone = void Function(String text);
+
+enum DialogDemoAction {
+	cancel,
+	discard,
+	disagree,
+	agree,
+}
+
 /// 显示加载框，注意：要在StatefulWidget下调用
 /// Use a [StatefulBuilder] or a custom [StatefulWidget] if the dialog needs to update dynamically.
 Future<Null> showLoadingDialog({@required BuildContext context, String text = '', String loadingPath = ""}) async {
@@ -13,6 +22,11 @@ Future<Null> showLoadingDialog({@required BuildContext context, String text = ''
 			return _DialogComponent(text: text, loadingPath: loadingPath);
 		},
 	);
+}
+
+/// 取消显示加载框
+void dismissLoadingDialog({@required BuildContext context}) {
+	Navigator.pop(context);
 }
 
 /// 此dialog控件会屏蔽返回按键
@@ -67,7 +81,132 @@ class _DialogComponent extends StatelessWidget {
 	}
 }
 
-/// 取消显示加载框
-void dismissLoadingDialog({@required BuildContext context}) {
-	Navigator.pop(context);
+///====================提示类对话框====================
+
+
+void showDemoDialog<T>({ BuildContext context, Widget child }) {
+	showDialog<T>(
+		context: context,
+		builder: (BuildContext context) => child,
+	)
+		.then<void>((T value) { // The value passed to Navigator.pop() or null.
+//            if (value != null) {
+//                _scaffoldKey.currentState.showSnackBar(new SnackBar(
+//                    content: new Text('You selected: $value')
+//                ));
+//            }
+	});
+}
+
+alertWith2Operation(BuildContext context, String message, VoidCallback onEnsure, {String cancelStr, String ensureStr, VoidCallback onCancel}) {
+
+//	ensureStr ??= lg.getString("确定");
+//	cancelStr ??= lg.getString("取消");
+
+	ensureStr ??= "确定";
+	cancelStr ??= "取消";
+
+	final TextStyle dialogTextStyle = TextStyle(
+		fontSize: 14.0,
+		color: Colors.white,
+	);
+
+	showDemoDialog<DialogDemoAction>(
+		context: context,
+		child: Theme(
+			data: Theme.of(context).copyWith(
+				dialogBackgroundColor:Color.fromARGB(0xcc, 0x00, 0x00, 0x00),
+			),
+			child: new AlertDialog(
+				content: new Text(
+					message,
+					style: dialogTextStyle
+				),
+				actions: <Widget>[
+					new FlatButton(
+						child: Text(cancelStr, style: TextStyle(
+							color: Colors.white
+						),),
+						onPressed: () {
+							if (onCancel == null) {
+								Navigator.of(context).pop();
+							} else {
+								onCancel();
+							}
+						}
+					),
+					new FlatButton(
+						child: Text(ensureStr, style: TextStyle(
+							color: Colors.white
+						),),
+						onPressed: () {
+							onEnsure();
+						}
+					)
+				]
+			),
+		)
+	);
+}
+
+inputDialog(BuildContext context, String message,bool isPass, InputDone onEnsure, {String cancelStr = '取消', String ensureStr = "确定", VoidCallback onCancel}) {
+	final TextStyle dialogTextStyle = TextStyle(
+		fontSize: 14.0,
+		color: Colors.white,
+	);
+	String tftext = "";
+	showDemoDialog<DialogDemoAction>(
+		context: context,
+		child: Theme(
+			data: Theme.of(context).copyWith(
+				dialogBackgroundColor:Color.fromARGB(0xcc, 0x00, 0x00, 0x00),
+			),
+			child: new AlertDialog(
+				content: TextField(
+					autofocus: true,
+					keyboardType: TextInputType.number,
+					decoration: InputDecoration(
+						fillColor: Colors.white,
+						hintStyle: TextStyle(
+							color: Colors.grey,
+						),
+						hintText: message,
+						focusedBorder: new UnderlineInputBorder(borderSide: new BorderSide(color: Colors.white, width: 0.5)),
+						enabledBorder: new UnderlineInputBorder(borderSide: new BorderSide(color: Colors.white, width: 0.5)),
+					),
+					style: TextStyle(
+						color: Colors.white,
+
+					),
+					obscureText: isPass,
+					cursorColor: Colors.white,
+					onChanged: (txt){
+						tftext = txt;
+					},
+				),
+				actions: <Widget>[
+					new FlatButton(
+						child: Text(cancelStr, style: TextStyle(
+							color: Colors.white
+						),),
+						onPressed: () {
+							if (onCancel == null) {
+								Navigator.of(context).pop();
+							} else {
+								onCancel();
+							}
+						}
+					),
+					new FlatButton(
+						child: Text(ensureStr, style: TextStyle(
+							color: Colors.white
+						),),
+						onPressed: () {
+							onEnsure(tftext);
+						}
+					)
+				]
+			),
+		)
+	);
 }
