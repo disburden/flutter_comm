@@ -25,6 +25,9 @@ enum TimeStyle {
 
 	/// 计算到现在的时间差(几分钟前,几天前,几个月前....)
 	DIFF,
+
+	/// 获取到现在的时间差的毫秒值
+	DIFF_MILLISECOND,
 }
 
 /// 时间工具
@@ -87,6 +90,19 @@ class FCTime {
 					if (timeDiff / 31104000 > 1) {
 						return '${timeDiff ~/ 31104000}年前';
 					}
+				}
+				break;
+
+			case TimeStyle.DIFF_MILLISECOND:
+				{
+					// 将日期转成时间戳
+					int flagTimeStamp = dt.millisecondsSinceEpoch;
+					// 获取当前日期
+					DateTime now = DateTime.now();
+					int nowTimeStamp = now.millisecondsSinceEpoch;
+					// 计算两个时间相差的毫秒数
+					int timeDiff = nowTimeStamp - flagTimeStamp;
+					return (timeDiff.abs()).toString();
 				}
 				break;
 		}
