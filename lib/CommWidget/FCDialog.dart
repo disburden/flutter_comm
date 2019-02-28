@@ -214,7 +214,7 @@ inputDialog(BuildContext context, String message,bool isPass, InputDone onEnsure
 
 ValueChanged<DateTime> selectDate;
 
-Future<void> pickerDate(BuildContext context,ValueChanged<DateTime> selectDate) async {
+Future<void> pickDate(BuildContext context,ValueChanged<DateTime> selectDate) async {
 	final DateTime picked = await showDatePicker(
 		context: context,
 		initialDate: DateTime.now(),
