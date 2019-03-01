@@ -95,6 +95,7 @@ class Picker {
 					GestureDetector(
 						onTap: (){
 							selectDone(dataSource[_selectedColorIndex]);
+							Navigator.of(ctx).pop();
 						},
 						child: Text("确定",style: buttonTextStyle)
 					),
