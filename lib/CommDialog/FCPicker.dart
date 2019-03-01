@@ -86,8 +86,18 @@ class Picker {
 			child: Row(
 				mainAxisAlignment: MainAxisAlignment.spaceBetween,
 				children: <Widget>[
-					Text("取消",style: buttonTextStyle),
-					Text("确定",style: buttonTextStyle),
+					GestureDetector(
+						onTap: (){
+							Navigator.of(ctx).pop();
+						},
+						child: Text("取消",style: buttonTextStyle)
+					),
+					GestureDetector(
+						onTap: (){
+							selectDone(dataSource[_selectedColorIndex]);
+						},
+						child: Text("确定",style: buttonTextStyle)
+					),
 				],
 			),
 		);
