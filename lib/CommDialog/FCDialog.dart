@@ -212,8 +212,8 @@ inputDialog(BuildContext context, String message,bool isPass, InputDone onEnsure
 }
 
 
+/// 选择日期
 ValueChanged<DateTime> selectDate;
-
 Future<void> pickDate(BuildContext context,ValueChanged<DateTime> selectDate) async {
 	final DateTime picked = await showDatePicker(
 		context: context,
@@ -223,3 +223,5 @@ Future<void> pickDate(BuildContext context,ValueChanged<DateTime> selectDate) as
 	);
 	selectDate(picked);
 }
+
+
