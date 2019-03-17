@@ -4,5 +4,4 @@ library CoreDialog;
 
 
 export 'FCDialog.dart';
-export 'FCInputDialog.dart';
 export 'FCPicker.dart';
