@@ -213,15 +213,15 @@ inputDialog(BuildContext context, String message,bool isPass, InputDone onEnsure
 
 
 /// 选择日期
-ValueChanged<DateTime> selectDate;
-Future<void> pickDate(BuildContext context,ValueChanged<DateTime> selectDate) async {
-	final DateTime picked = await showDatePicker(
-		context: context,
-		initialDate: DateTime.now(),
-		firstDate: DateTime(2015, 8),
-		lastDate: DateTime(2101)
-	);
-	selectDate(picked);
-}
+//ValueChanged<DateTime> selectDate;
+//Future<void> pickDate(BuildContext context,ValueChanged<DateTime> selectDate) async {
+//	final DateTime picked = await showDatePicker(
+//		context: context,
+//		initialDate: DateTime.now(),
+//		firstDate: DateTime(2015, 8),
+//		lastDate: DateTime(2101)
+//	);
+//	selectDate(picked);
+//}
 
 

@@ -1,7 +1,7 @@
-
+import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 
-class Picker {
+class FCPicker {
 	final BuildContext ctx;
 	final List<String> dataSource;
 	final ValueChanged<String> selectDone;
@@ -12,7 +12,7 @@ class Picker {
 
 	double _kPickerSheetHeight = 216.0;
 	double _kPickerItemHeight = 32.0;
-	Picker({
+	FCPicker({
 		@required this.ctx,
 		@required this.dataSource,
 		@required this.selectDone,
@@ -67,7 +67,7 @@ class Picker {
 							children: <Widget>[
 								Container(
 									height: 40,
-									child: pickerToolsBar(),
+									child: _pickerToolsBar(),
 								),
 								Expanded(
 									child: picker,
@@ -80,7 +80,7 @@ class Picker {
 		);
 	}
 
-	Widget pickerToolsBar(){
+	Widget _pickerToolsBar(){
 		return Padding(
 			padding: const EdgeInsets.symmetric(horizontal: 16),
 			child: Row(
@@ -103,4 +103,18 @@ class Picker {
 			),
 		);
 	}
+	
+	
+	/// 选择日期
+	ValueChanged<DateTime> selectDate;
+	static Future<void> pickDate(BuildContext context,ValueChanged<DateTime> selectDate) async {
+		final DateTime picked = await showDatePicker(
+			context: context,
+			initialDate: DateTime.now(),
+			firstDate: DateTime(2015, 8),
+			lastDate: DateTime(2101)
+		);
+		selectDate(picked);
+	}
+	
 }
