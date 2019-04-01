@@ -98,6 +98,8 @@ void showDemoDialog<T>({ BuildContext context, Widget child }) {
 	});
 }
 
+
+/// 提示对话框,并带有两个按钮(默认名称为"确定"和"取消")
 alertWith2Operation(BuildContext context, String message, VoidCallback onEnsure, {String cancelStr, String ensureStr, VoidCallback onCancel}) {
 
 //	ensureStr ??= lg.getString("确定");

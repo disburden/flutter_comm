@@ -38,8 +38,20 @@ class FCCommFunc {
 		return random.nextInt(max - min) + min;
 	}
 
+	/// 生成一个随机颜色
 	static Color sjColor() {
 		math.Random random = math.Random();
 		return Color.fromARGB(255, random.nextInt(255), random.nextInt(255), random.nextInt(255));
+	}
+	
+	/// 数组带索引映射
+	List<T> mapWithIndex<T>(List<T> list, T Function(int index, T value) withIndex) {
+		return list
+			.asMap()
+			.map((k, v) {
+			return MapEntry(k, withIndex(k, v));
+		})
+			.values
+			.toList();
 	}
 }
