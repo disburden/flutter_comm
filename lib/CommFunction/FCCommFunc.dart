@@ -45,7 +45,7 @@ class FCCommFunc {
 	}
 	
 	/// 数组带索引映射
-	List<T> mapWithIndex<T>(List list, Function(int index, dynamic value) withIndex) {
+	static List<T> mapWithIndex<T>(List list, Function(int index, dynamic value) withIndex) {
 		return list
 			.asMap()
 			.map((k, v) {
