@@ -12,8 +12,9 @@ export 'FCRoundedCorner.dart';
 /// 用textField制作textView,因为flutter自己没有textview组件
 export 'FCTextView.dart';
 
-/// 对话框
-export 'package:flutter_comm/CommDialog/FCDialog.dart';
+/// 一些小工具
+/// 分割线,随机颜色
+export 'FCWidgetUtils.dart';
 
 /// 可以动态添加子组件
 export 'FCAddableWidget.dart';
