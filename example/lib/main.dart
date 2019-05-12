@@ -12,15 +12,6 @@ class MyApp extends StatelessWidget {
 		return MaterialApp(
 			title: 'Flutter Demo',
 			theme: ThemeData(
-				// This is the theme of your application.
-				//
-				// Try running your application with "flutter run". You'll see the
-				// application has a blue toolbar. Then, without quitting the app, try
-				// changing the primarySwatch below to Colors.green and then invoke
-				// "hot reload" (press "r" in the console where you ran "flutter run",
-				// or simply save your changes to "hot reload" in a Flutter IDE).
-				// Notice that the counter didn't reset back to zero; the application
-				// is not restarted.
 				primarySwatch: Colors.blue,
 			),
 			home: MyHomePage(title: 'Flutter Demo Home Page'),
@@ -50,27 +41,8 @@ class _MyHomePageState extends State<MyHomePage> {
 	FCTextView tv;
 
 	void _incrementCounter() {
-		print(tv.text);
-		tv.text = "hoho change to galking";
-
-		String dd = FCEncrypt.encodeUseBase64("hoho asdfwefasdfase asdfwe3");
-		print(dd);
-		String cc = FCEncrypt.decodeUseBase64(dd);
-		print(cc);
-
-
-
-//		setState(() {
-//			ad.addSubView(
-//				child: Container(
-//					color: Colors.black26,
-//				),
-//				height: 20.0,
-//				width: 5.0,
-//				top: 40.0,
-//				left: 30.0
-//			);
-//		});
+		FCPicker(ctx: context, dataSource: ["a","b","C"], selectDone: (i,v){
+		}).showPickerDialog();
 	}
 
 	@override
@@ -115,13 +87,6 @@ class _MyHomePageState extends State<MyHomePage> {
 						tv,
 						ad,
 						inoti,
-//            Text(
-//              'You have pushed the button this many times:',
-//            ),
-//            Text(
-//              '$_counter',
-//              style: Theme.of(context).textTheme.display1,
-//            ),
 					],
 				),
 			),

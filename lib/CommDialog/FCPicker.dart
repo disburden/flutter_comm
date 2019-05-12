@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 
+typedef finishSelect<I,T> = void Function(I idex,T value);
+
 class FCPicker {
 	final BuildContext ctx;
 	final List<String> dataSource;
-	final ValueChanged<String> selectDone;
+	final finishSelect<int,String> selectDone;
 
 	TextStyle buttonTextStyle;
 
@@ -94,7 +96,7 @@ class FCPicker {
 					),
 					GestureDetector(
 						onTap: (){
-							selectDone(dataSource[_selectedColorIndex]);
+							selectDone(_selectedColorIndex,dataSource[_selectedColorIndex]);
 							Navigator.of(ctx).pop();
 						},
 						child: Text("确定",style: buttonTextStyle)
