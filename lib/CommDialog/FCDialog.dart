@@ -151,7 +151,7 @@ alertWith2Operation(BuildContext context, String message, VoidCallback onEnsure,
 	);
 }
 
-FCInputDialog(
+FCInputDialogWithOneField(
 	BuildContext context,
 	String message,
 	bool isPass,
