@@ -21,3 +21,6 @@ export 'FCAddableWidget.dart';
 
 /// 带有一个图标的通知文本
 export 'FCIconNoti.dart';
+
+/// 带图标的按钮
+export 'FCImageButton.dart';
