@@ -5,7 +5,7 @@ class FCWidgetUtils {
 	
 	/// 画一条分割线
 	static Widget splitLine({
-		double height = 8.0,
+		double height = 1.0,
 		double leftIndent = 0.0,
 		double rightIndent = 0.0,
 		Color lineColor = const Color(0xfff7f7f7)

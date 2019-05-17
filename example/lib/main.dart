@@ -86,6 +86,17 @@ class _MyHomePageState extends State<MyHomePage> {
 					children: <Widget>[
 						tv,
 						ad,
+						FCImageButton(
+							image: Icon(Icons.map),
+							tag: 1,
+							text: Text("nnn"),
+							onClick: (_idx){
+								print("$_idx");
+							},
+							gapBetweenImageAndText: 8.0,
+							style: ImageButtonStyle.topImageButtonText,
+							padding: EdgeInsets.zero,
+						),
 						inoti,
 					],
 				),
