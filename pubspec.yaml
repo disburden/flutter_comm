@@ -11,19 +11,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-#  # 3des加密
-#  tripledes: ^2.1.0
-#
-#  # aes加密
-#  encrypt: ^2.0.0
-#
-#  # 不可逆加密库(sha1,md5)等
-#  crypto: ^2.0.6
 
-#  dart_comm:
-#    git:
-#      url: https://github.com/disburden/dart_comm.git
-#      ref: 43ec56d74f520d98bb1d157a55c27d2237dfa4de
 
 dev_dependencies:
   flutter_test:

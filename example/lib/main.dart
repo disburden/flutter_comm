@@ -41,8 +41,23 @@ class _MyHomePageState extends State<MyHomePage> {
 	FCTextView tv;
 
 	void _incrementCounter() {
-		FCPicker(ctx: context, dataSource: ["a","b","C"], selectDone: (i,v){
-		}).showPickerDialog();
+//		FCShowJhTransparent(context: context);
+//	FCShowJhNormal(context: context);
+		
+//		Future.delayed(Duration(seconds: 3),(){
+//			FCDismissDialog(context);
+//		});
+		
+		FCInputDialogWithOneField(context,"ss",false,(_s){
+			
+			print("输入的值是:$_s");
+		},defaultText: "123");
+	
+	
+//		FCShowStateDialog(context: context,text: "hoho是啊的沙发斯蒂芬就是地方阿萨德分撒旦发发送到发的",iconImage: CircularProgressIndicator());
+//		Future.delayed(Duration(seconds: 3),(){
+//			FCShowStateDialog(context: context,text: "xixi",iconImage: Icon(Icons.brightness_3,color: Colors.cyan,));
+//		});
 	}
 
 	@override

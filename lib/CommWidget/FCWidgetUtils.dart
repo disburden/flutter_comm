@@ -25,3 +25,27 @@ class FCWidgetUtils {
 		return Color.fromARGB(255, random.nextInt(255), random.nextInt(255), random.nextInt(255));
 	}
 }
+
+
+//class NetImageWithCorner extends StatelessWidget {
+//	final String imageUrl;
+//	final double radius;
+//	final Size size;
+//
+//	NetImageWithCorner({this.imageUrl, this.radius, this.size});
+//
+//	@override
+//	Widget build(BuildContext context) {
+//		Size aSize = size ?? Size(double.infinity, double.infinity);
+//		var aRadius = radius ?? 4.0;
+//		return ClipRRect(
+//			borderRadius: BorderRadius.circular(aRadius),
+//			child: new CachedNetworkImage(
+//				imageUrl: imageUrl,
+//				fit: BoxFit.cover,
+//				height: aSize.height,
+//				width: aSize.width,
+//			),
+//		);
+//	}
+//}

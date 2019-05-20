@@ -9,36 +9,122 @@ enum DialogDemoAction {
 	agree,
 }
 
-/// 显示加载框，注意：要在StatefulWidget下调用
-/// Use a [StatefulBuilder] or a custom [StatefulWidget] if the dialog needs to update dynamically.
-Future<Null> FCShowLoadingDialog({@required BuildContext context, String text = '', String loadingPath = ""}) async {
-	if (text.isEmpty) {
-		text = "Loading...";
-	}
+enum DialogType {
+	show,
+	overlay,
+}
+
+DialogType _dialogType;
+
+/// 显示加载菊花,有黑色半透明的背景
+Future<Null> FCShowJhNormal({@required BuildContext context}) async {
+	_dialogType = DialogType.show;
 	return showDialog<Null>(
 		context: context,
 		barrierDismissible: false,
+		
 		builder: (BuildContext context) {
-			return _DialogComponent(text: text, loadingPath: loadingPath);
+			return SizedBox(
+				height: 30,
+				width: 30,
+				child: Material(
+					child: Center(
+						child: CircularProgressIndicator()
+					),
+					color: Colors.transparent,
+					type: MaterialType.transparency,
+				),
+			);
 		},
 	);
 }
 
-/// 取消显示加载框
-void dismissLoadingDialog({@required BuildContext context}) {
-	Navigator.pop(context);
+
+OverlayEntry overlayEntry;
+
+/// 显示加载菊花,有黑色半透明的背景
+FCShowJhTransparent({@required BuildContext context}) async {
+	_dialogType = DialogType.overlay;
+	var overlayState = Overlay.of(context);
+	
+	
+	
+	overlayEntry = new OverlayEntry(builder: (context) {
+		return Center(child: CircularProgressIndicator());
+	});
+	
+	overlayState.insert(overlayEntry);
 }
 
-/// 此dialog控件会屏蔽返回按键
-/// android端按下返回按键会导致dialog被关闭
-class _DialogComponent extends StatelessWidget {
+
+
+///====================可以更新状态文本的对话框====================
+
+GlobalKey<_DialogContentViewState> keyOne = GlobalKey();
+
+Future<Null> FCShowStateDialog({
+	@required BuildContext context,
+	String text = '',
+	Widget iconImage
+}) {
+	bool isUpdate = keyOne.currentState != null && keyOne.currentState.getCurrentText() != text;
+	if (isUpdate) {
+		keyOne.currentState.changeText(text);
+		if (iconImage != null) {
+			keyOne.currentState.changeImage(iconImage);
+		}
+	} else {
+		keyOne = GlobalKey();
+		return showDialog<Null>(
+			context: context,
+			barrierDismissible: false,
+			builder: (BuildContext context) {
+				return _DialogContentView(text: text, key: keyOne, iconImage: iconImage);
+			},
+		);
+	}
+}
+
+class _DialogContentView extends StatefulWidget {
 	final String text;
-	final String loadingPath;
+	final Key key;
+	final Widget iconImage;
+	
+	_DialogContentView({this.key, this.text, this.iconImage}) : super(key: key);
+	
+	@override
+	_DialogContentViewState createState() => _DialogContentViewState();
+}
 
-	_DialogComponent({@required this.text, @required this.loadingPath});
-
+class _DialogContentViewState extends State<_DialogContentView> {
+	
+	var _msg;
+	var _currentText;
+	var _imageIcon;
+	
+	void changeText(String inMsg) {
+		setState(() {
+			_msg = inMsg;
+		});
+	}
+	
+	String getCurrentText() {
+		return _currentText;
+	}
+	
+	void changeImage(Widget imageIcon) {
+		setState(() {
+			_imageIcon = imageIcon;
+		});
+	}
+	
 	@override
 	Widget build(BuildContext context) {
+		var msg = _msg ?? widget.text;
+		var imageIcon = _imageIcon ?? widget.iconImage;
+		
+		_currentText = msg;
+		
 		Future<bool> _onWillPop() => new Future.value(false);
 		return WillPopScope(
 			onWillPop: _onWillPop,
@@ -64,10 +150,10 @@ class _DialogComponent extends StatelessWidget {
 											height: 32.0,
 											width: 32.0,
 											margin: EdgeInsets.only(bottom: 8.0),
-											child: Image.asset(loadingPath),
+											child: imageIcon,
 										),
 										Text(
-											text,
+											msg,
 											style: TextStyle(color: Colors.white, fontSize: 16.0),
 										),
 									],
@@ -81,33 +167,21 @@ class _DialogComponent extends StatelessWidget {
 	}
 }
 
-///====================提示类对话框====================
 
 
-void _showDemoDialog<T>({ BuildContext context, Widget child }) {
-	showDialog<T>(
-		context: context,
-		builder: (BuildContext context) => child,
-	)
-		.then<void>((T value) { // The value passed to Navigator.pop() or null.
-            if (value != null) {
-//                _scaffoldKey.currentState.showSnackBar(new SnackBar(
-//                    content: new Text('You selected: $value')
-//                ));
-            }
-	});
-}
-
-
-/// 提示对话框,并带有两个按钮(默认名称为"确定"和"取消")
-alertWith2Operation(BuildContext context, String message, VoidCallback onEnsure, {String cancelStr, String ensureStr, VoidCallback onCancel}) {
-
-//	ensureStr ??= lg.getString("确定");
-//	cancelStr ??= lg.getString("取消");
-
+/// 确认对话框,并带有两个按钮(默认名称为"确定"和"取消")
+FCAlertWith2Operation(
+	BuildContext context,
+	String message,
+	VoidCallback onEnsure,
+	{
+		String cancelStr,
+		String ensureStr,
+		VoidCallback onCancel
+	}) {
 	ensureStr ??= "确定";
 	cancelStr ??= "取消";
-
+	
 	final TextStyle dialogTextStyle = TextStyle(
 		fontSize: 14.0,
 		color: Colors.white,
@@ -117,7 +191,7 @@ alertWith2Operation(BuildContext context, String message, VoidCallback onEnsure,
 		context: context,
 		child: Theme(
 			data: Theme.of(context).copyWith(
-				dialogBackgroundColor:Color.fromARGB(0xcc, 0x00, 0x00, 0x00),
+				dialogBackgroundColor: Color.fromARGB(0xcc, 0x00, 0x00, 0x00),
 			),
 			child: new AlertDialog(
 				content: new Text(
@@ -151,38 +225,55 @@ alertWith2Operation(BuildContext context, String message, VoidCallback onEnsure,
 	);
 }
 
-FCInputDialogWithOneField(
-	BuildContext context,
+void _showDemoDialog<T>({ BuildContext context, Widget child }) {
+	showDialog<T>(
+		context: context,
+		builder: (BuildContext context) => child,
+	)
+		.then<void>((T value) {
+		if (value != null) {
+		
+		}
+	});
+}
+
+
+
+/// 只有一个输入框的输入对话框
+FCInputDialogWithOneField(BuildContext context,
 	String message,
 	bool isPass,
 	InputDone onEnsure,
 	{
 		String cancelStr = '取消',
 		String ensureStr = "确定",
-		TextInputType keyboardType=TextInputType.text,
+		TextInputType keyboardType = TextInputType.text,
 		Color backgroundColor = const Color.fromARGB(0xcc, 0x00, 0x00, 0x00),
 		Color boderColor = Colors.white,
 		Color textColor = Colors.white,
-		VoidCallback onCancel
-	})
-{
-	final TextStyle dialogTextStyle = TextStyle(
-		fontSize: 14.0,
-		color: Colors.white,
-	);
-	String tftext = "";
+		VoidCallback onCancel,
+		String defaultText = ""
+	}) {
+
+	TextEditingController _ctrl = TextEditingController();
+	_ctrl.text = defaultText;
+	_ctrl.selection = TextSelection(baseOffset: 0, extentOffset: _ctrl.text.length);
+	
+	String tftext = defaultText;
 	_showDemoDialog<DialogDemoAction>(
 		context: context,
 		child: Theme(
 			data: Theme.of(context).copyWith(
-				dialogBackgroundColor:backgroundColor,
+				dialogBackgroundColor: backgroundColor,
 			),
 			child: new AlertDialog(
 				content: TextField(
+					controller: _ctrl,
 					autofocus: true,
 					keyboardType: keyboardType,
 					decoration: InputDecoration(
 						fillColor: Colors.white,
+						
 						hintStyle: TextStyle(
 							color: Colors.grey,
 						),
@@ -192,11 +283,10 @@ FCInputDialogWithOneField(
 					),
 					style: TextStyle(
 						color: textColor,
-
 					),
 					obscureText: isPass,
 					cursorColor: textColor,
-					onChanged: (txt){
+					onChanged: (txt) {
 						tftext = txt;
 					},
 				),
@@ -226,6 +316,22 @@ FCInputDialogWithOneField(
 		)
 	);
 }
+
+/// 取消显示的对话框或者加载框(应该与前面的方法成对出现)
+/// 注意:用这个方法后不要再用Navigator.pop()方法再次关闭对话框
+FCDismissDialog(BuildContext ctx) {
+	if (_dialogType == null) return;
+	switch (_dialogType) {
+		case DialogType.show:
+			Navigator.pop(ctx);
+			break;
+		case DialogType.overlay:
+			overlayEntry?.remove();
+			break;
+	}
+}
+
+
 
 
 
