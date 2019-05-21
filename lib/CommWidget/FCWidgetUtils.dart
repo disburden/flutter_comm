@@ -1,15 +1,34 @@
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
 
+
+
 class FCWidgetUtils {
 	
-	/// 画一条分割线
-	static Widget splitLine({
-		double height = 1.0,
-		double leftIndent = 0.0,
-		double rightIndent = 0.0,
-		Color lineColor = const Color(0xfff7f7f7)
-	}) {
+	
+	/// 生成一个随机颜色
+	static Color sjColor() {
+		math.Random random = math.Random();
+		return Color.fromARGB(255, random.nextInt(255), random.nextInt(255), random.nextInt(255));
+	}
+}
+
+
+class FCLine extends StatelessWidget {
+	final double height;
+	final double leftIndent;
+	final double rightIndent;
+	final Color lineColor;
+	
+	FCLine({
+		this.height = 1.0,
+		this.leftIndent = 0,
+		this.rightIndent = 0,
+		this.lineColor = const Color(0xfff7f7f7)
+	});
+	
+	@override
+	Widget build(BuildContext context) {
 		return Padding(
 			padding: EdgeInsets.only(left: leftIndent, right: rightIndent),
 			child: Container(
@@ -17,12 +36,6 @@ class FCWidgetUtils {
 				height: height,
 			),
 		);
-	}
-	
-	/// 生成一个随机颜色
-	static Color sjColor() {
-		math.Random random = math.Random();
-		return Color.fromARGB(255, random.nextInt(255), random.nextInt(255), random.nextInt(255));
 	}
 }
 
@@ -74,8 +87,6 @@ class FCSettingItemWidget extends StatelessWidget {
 			this.needRightArrow = true
 		});
 	
-	
-	
 	Widget content() {
 		return Padding(
 			padding: padding,
@@ -87,7 +98,7 @@ class FCSettingItemWidget extends StatelessWidget {
 						offstage: iconFilename == null,
 						child: Padding(
 							padding: const EdgeInsets.only(left: 16.0),
-							child: Image.asset('assets/images/${iconFilename}.png'),
+							child: iconFilename == null ? Container() : Image.asset('assets/images/${iconFilename}.png'),
 						),
 					),
 					
@@ -132,3 +143,6 @@ class FCSettingItemWidget extends StatelessWidget {
 		return InkWell(onTap: onClick, child: content());
 	}
 }
+
+
+
