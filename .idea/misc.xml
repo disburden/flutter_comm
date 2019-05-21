@@ -35,7 +35,7 @@
       </value>
     </option>
   </component>
-  <component name="ProjectPlainTextFileTypeManager">
-    <file url="file://$PROJECT_DIR$/lib/CommDialog/FCInputDialog.dart" />
+  <component name="ProjectType">
+    <option name="id" value="io.flutter" />
   </component>
 </project>
