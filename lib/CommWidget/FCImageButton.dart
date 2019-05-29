@@ -20,7 +20,7 @@ class FCImageButton extends StatefulWidget {
 		this.gapBetweenImageAndText,
 		this.style,
 		this.onClick,
-		this.tag=-1,
+		this.tag = -1,
 	});
 	
 	@override
@@ -64,11 +64,12 @@ class _FCImageButtonState extends State<FCImageButton> {
 					return Row(
 						mainAxisSize: MainAxisSize.min,
 						children: <Widget>[
+							widget.text,
 							Padding(
 								padding: EdgeInsets.only(left: widget.gapBetweenImageAndText),
-								child: widget.text,
+								child: widget.image,
 							),
-							widget.image,
+						
 						],
 					);
 				}
