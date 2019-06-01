@@ -11,7 +11,10 @@ dependencies:
   flutter:
     sdk: flutter
 
-
+  dart_comm:
+    git:
+      url: https://github.com/disburden/dart_comm.git
+      ref: a14d33844a73f098da4f36394aa96e665b3ac189
 
 dev_dependencies:
   flutter_test:

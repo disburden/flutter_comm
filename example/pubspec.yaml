@@ -22,10 +22,10 @@ dependencies:
   flutter_comm:
     path: ../
 
-  dart_comm:
-    git:
-      url: https://github.com/disburden/dart_comm.git
-      ref: 43ec56d74f520d98bb1d157a55c27d2237dfa4de
+#  dart_comm:
+#    git:
+#      url: https://github.com/disburden/dart_comm.git
+#      ref: 43ec56d74f520d98bb1d157a55c27d2237dfa4de
 
 dev_dependencies:
   flutter_test:

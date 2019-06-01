@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:dart_comm/dart_comm.dart';
+import 'FCPicker.dart';
+
 
 typedef InputDone = void Function(String text);
+typedef DateIntervalDone = void Function(List<DateTime>);
 
 enum DialogDemoAction {
 	cancel,
@@ -17,7 +21,7 @@ enum DialogType {
 DialogType _dialogType;
 
 /// 显示加载菊花,有黑色半透明的背景
-Future<Null> FCShowJhNormal({@required BuildContext context}) async {
+Future<Null> FCDialogShowJhNormal({@required BuildContext context}) async {
 	_dialogType = DialogType.show;
 	return showDialog<Null>(
 		context: context,
@@ -43,7 +47,7 @@ Future<Null> FCShowJhNormal({@required BuildContext context}) async {
 OverlayEntry overlayEntry;
 
 /// 显示加载菊花,有黑色半透明的背景
-FCShowJhTransparent({@required BuildContext context}) async {
+FCDialogShowJhTransparent({@required BuildContext context}) async {
 	_dialogType = DialogType.overlay;
 	var overlayState = Overlay.of(context);
 	
@@ -59,10 +63,17 @@ FCShowJhTransparent({@required BuildContext context}) async {
 
 
 ///====================可以更新状态文本的对话框====================
+/// 就是屏幕中间一个黑色的小方块,分上下两部分,上面一半是朵菊花在转,下面是文字,比如"loading...."
+/// 要更新状态时只要直接重复调用这个方法就行 e.g:
+/// 		FCDialogWithState(context: context,text: "hoho是啊的沙发斯蒂芬就是地方阿萨德分撒旦发发送到发的",iconImage: CircularProgressIndicator());
+/// 		Future.delayed(Duration(seconds: 3),(){
+/// 			FCDialogWithState(context: context,text: "xixi",iconImage: Icon(Icons.brightness_3,color: Colors.cyan,));
+/// 		});
+
 
 GlobalKey<_DialogContentViewState> keyOne = GlobalKey();
 
-Future<Null> FCShowStateDialog({
+Future<Null> FCDialogWithState({
 	@required BuildContext context,
 	String text = '',
 	Widget iconImage
@@ -170,8 +181,7 @@ class _DialogContentViewState extends State<_DialogContentView> {
 
 
 /// 确认对话框,并带有两个按钮(默认名称为"确定"和"取消")
-FCAlertWith2Operation(
-	BuildContext context,
+FCDialogConfirmWith2Operation(BuildContext context,
 	String message,
 	VoidCallback onEnsure,
 	{
@@ -240,7 +250,7 @@ void _showDemoDialog<T>({ BuildContext context, Widget child }) {
 
 
 /// 只有一个输入框的输入对话框
-FCInputDialogWithOneField(BuildContext context,
+FCDialogInputWithOneField(BuildContext context,
 	String message,
 	bool isPass,
 	InputDone onEnsure,
@@ -254,7 +264,6 @@ FCInputDialogWithOneField(BuildContext context,
 		VoidCallback onCancel,
 		String defaultText = ""
 	}) {
-
 	TextEditingController _ctrl = TextEditingController();
 	_ctrl.text = defaultText;
 	_ctrl.selection = TextSelection(baseOffset: 0, extentOffset: _ctrl.text.length);
@@ -315,6 +324,193 @@ FCInputDialogWithOneField(BuildContext context,
 			),
 		)
 	);
+}
+
+
+
+FCDialogPickerDateInterval(BuildContext context,
+	InputDone onEnsure,
+	{
+		String cancelStr = '取消',
+		String ensureStr = "确定",
+		Color backgroundColor = const Color.fromARGB(0xcc, 0x00, 0x00, 0x00),
+		Color boderColor = Colors.white,
+		Color textColor = Colors.white,
+		VoidCallback onCancel,
+		DateIntervalDone selectedDone,
+	}) {
+	TimeStyle dtstyle = TimeStyle.YEAR_hg_MO_hg_DAY;
+	DateTime b = DateTime.now();
+	DateTime e = DateTime.now();
+	
+	showDialog(
+		context: context,
+		builder: (context) {
+			String label = 'test';
+			return StatefulBuilder(
+				builder: (context, state) {
+					return Theme(
+						data: Theme.of(context).copyWith(
+							dialogBackgroundColor: backgroundColor,
+						),
+						child: new AlertDialog(
+							content: Row(
+								mainAxisAlignment: MainAxisAlignment.center,
+								children: <Widget>[
+									GestureDetector(
+										onTap: () {
+											FCPicker.pickDate(context, (_date){
+												b=_date;
+												state((){});
+											});
+										},
+										behavior: HitTestBehavior.opaque,
+										child: Row(
+											mainAxisAlignment: MainAxisAlignment.center,
+											children: <Widget>[
+												Text(DCTime.formatDateTime(dateTimeString: b.toString(), style: dtstyle), style: TextStyle(
+													fontSize: 14,
+													color: textColor
+												),),
+												Icon(Icons.arrow_drop_down, color: textColor,),
+											],
+										),
+									),
+									Text(" 到  ", style: TextStyle(
+										fontSize: 14,
+										color: textColor
+									),),
+									GestureDetector(
+										onTap: () {
+											FCPicker.pickDate(context, (_date){
+												e=_date;
+												state((){});
+											});
+										},
+										behavior: HitTestBehavior.opaque,
+										child: Row(
+											mainAxisAlignment: MainAxisAlignment.center,
+											children: <Widget>[
+												Text(DCTime.formatDateTime(dateTimeString: e.toString(), style: dtstyle), style: TextStyle(
+													fontSize: 14,
+													color: textColor
+												),),
+												Icon(Icons.arrow_drop_down, color: textColor,),
+											],
+										),
+									),
+								],
+							),
+							actions: <Widget>[
+								new FlatButton(
+									child: Text(cancelStr, style: TextStyle(
+										color: textColor
+									),),
+									onPressed: () {
+										if (onCancel == null) {
+											Navigator.of(context).pop();
+										} else {
+											onCancel();
+										}
+									}
+								),
+								new FlatButton(
+									child: Text(ensureStr, style: TextStyle(
+										color: textColor
+									),),
+									onPressed: () {
+										selectedDone([b,e]);
+									}
+								)
+							]
+						),
+					);
+				},
+			);
+		});
+	
+	
+//	_showDemoDialog<DialogDemoAction>(
+//		context: context,
+//		child: Theme(
+//			data: Theme.of(context).copyWith(
+//				dialogBackgroundColor: backgroundColor,
+//			),
+//			child: new AlertDialog(
+//				content: Row(
+//					mainAxisAlignment: MainAxisAlignment.center,
+//					children: <Widget>[
+//						GestureDetector(
+//							onTap: () {
+//
+//							},
+//							behavior: HitTestBehavior.opaque,
+//							child: Row(
+//								mainAxisAlignment: MainAxisAlignment.center,
+//								children: <Widget>[
+////								Text("从:", style: TextStyle(
+////									fontSize: 14,
+////									color: textColor
+////								),),
+//									Text("2018-08-08", style: TextStyle(
+//										fontSize: 14,
+//										color: textColor
+//									),),
+//									Icon(Icons.arrow_drop_down, color: textColor,),
+//								],
+//							),
+//						),
+//						Text(" 到  ", style: TextStyle(
+//							fontSize: 14,
+//							color: textColor
+//						),),
+//						GestureDetector(
+//							onTap: () {
+//
+//							},
+//							behavior: HitTestBehavior.opaque,
+//							child: Row(
+//								mainAxisAlignment: MainAxisAlignment.center,
+//								children: <Widget>[
+////								Text("到:", style: TextStyle(
+////									fontSize: 14,
+////									color: textColor
+////								),),
+//									Text("2018-08-08", style: TextStyle(
+//										fontSize: 14,
+//										color: textColor
+//									),),
+//									Icon(Icons.arrow_drop_down, color: textColor,),
+//								],
+//							),
+//						),
+//					],
+//				),
+//				actions: <Widget>[
+//					new FlatButton(
+//						child: Text(cancelStr, style: TextStyle(
+//							color: textColor
+//						),),
+//						onPressed: () {
+//							if (onCancel == null) {
+//								Navigator.of(context).pop();
+//							} else {
+//								onCancel();
+//							}
+//						}
+//					),
+//					new FlatButton(
+//						child: Text(ensureStr, style: TextStyle(
+//							color: textColor
+//						),),
+//						onPressed: () {
+//
+//						}
+//					)
+//				]
+//			),
+//		)
+//	);
 }
 
 /// 取消显示的对话框或者加载框(应该与前面的方法成对出现)
