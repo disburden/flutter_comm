@@ -329,7 +329,7 @@ FCDialogInputWithOneField(BuildContext context,
 
 
 FCDialogPickerDateInterval(BuildContext context,
-	InputDone onEnsure,
+	DateIntervalDone selectedDone,
 	{
 		String cancelStr = '取消',
 		String ensureStr = "确定",
@@ -337,7 +337,6 @@ FCDialogPickerDateInterval(BuildContext context,
 		Color boderColor = Colors.white,
 		Color textColor = Colors.white,
 		VoidCallback onCancel,
-		DateIntervalDone selectedDone,
 	}) {
 	TimeStyle dtstyle = TimeStyle.YEAR_hg_MO_hg_DAY;
 	DateTime b = DateTime.now();
@@ -359,9 +358,9 @@ FCDialogPickerDateInterval(BuildContext context,
 								children: <Widget>[
 									GestureDetector(
 										onTap: () {
-											FCPicker.pickDate(context, (_date){
-												b=_date;
-												state((){});
+											FCPicker.pickDate(context, (_date) {
+												b = _date;
+												state(() {});
 											});
 										},
 										behavior: HitTestBehavior.opaque,
@@ -382,9 +381,9 @@ FCDialogPickerDateInterval(BuildContext context,
 									),),
 									GestureDetector(
 										onTap: () {
-											FCPicker.pickDate(context, (_date){
-												e=_date;
-												state((){});
+											FCPicker.pickDate(context, (_date) {
+												e = _date;
+												state(() {});
 											});
 										},
 										behavior: HitTestBehavior.opaque,
@@ -419,7 +418,7 @@ FCDialogPickerDateInterval(BuildContext context,
 										color: textColor
 									),),
 									onPressed: () {
-										selectedDone([b,e]);
+										selectedDone([b, e]);
 									}
 								)
 							]
@@ -428,89 +427,6 @@ FCDialogPickerDateInterval(BuildContext context,
 				},
 			);
 		});
-	
-	
-//	_showDemoDialog<DialogDemoAction>(
-//		context: context,
-//		child: Theme(
-//			data: Theme.of(context).copyWith(
-//				dialogBackgroundColor: backgroundColor,
-//			),
-//			child: new AlertDialog(
-//				content: Row(
-//					mainAxisAlignment: MainAxisAlignment.center,
-//					children: <Widget>[
-//						GestureDetector(
-//							onTap: () {
-//
-//							},
-//							behavior: HitTestBehavior.opaque,
-//							child: Row(
-//								mainAxisAlignment: MainAxisAlignment.center,
-//								children: <Widget>[
-////								Text("从:", style: TextStyle(
-////									fontSize: 14,
-////									color: textColor
-////								),),
-//									Text("2018-08-08", style: TextStyle(
-//										fontSize: 14,
-//										color: textColor
-//									),),
-//									Icon(Icons.arrow_drop_down, color: textColor,),
-//								],
-//							),
-//						),
-//						Text(" 到  ", style: TextStyle(
-//							fontSize: 14,
-//							color: textColor
-//						),),
-//						GestureDetector(
-//							onTap: () {
-//
-//							},
-//							behavior: HitTestBehavior.opaque,
-//							child: Row(
-//								mainAxisAlignment: MainAxisAlignment.center,
-//								children: <Widget>[
-////								Text("到:", style: TextStyle(
-////									fontSize: 14,
-////									color: textColor
-////								),),
-//									Text("2018-08-08", style: TextStyle(
-//										fontSize: 14,
-//										color: textColor
-//									),),
-//									Icon(Icons.arrow_drop_down, color: textColor,),
-//								],
-//							),
-//						),
-//					],
-//				),
-//				actions: <Widget>[
-//					new FlatButton(
-//						child: Text(cancelStr, style: TextStyle(
-//							color: textColor
-//						),),
-//						onPressed: () {
-//							if (onCancel == null) {
-//								Navigator.of(context).pop();
-//							} else {
-//								onCancel();
-//							}
-//						}
-//					),
-//					new FlatButton(
-//						child: Text(ensureStr, style: TextStyle(
-//							color: textColor
-//						),),
-//						onPressed: () {
-//
-//						}
-//					)
-//				]
-//			),
-//		)
-//	);
 }
 
 /// 取消显示的对话框或者加载框(应该与前面的方法成对出现)
