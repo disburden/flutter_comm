@@ -345,7 +345,6 @@ FCDialogPickerDateInterval(BuildContext context,
 	showDialog(
 		context: context,
 		builder: (context) {
-			String label = 'test';
 			return StatefulBuilder(
 				builder: (context, state) {
 					return Theme(
@@ -359,8 +358,10 @@ FCDialogPickerDateInterval(BuildContext context,
 									GestureDetector(
 										onTap: () {
 											FCPicker.pickDate(context, (_date) {
-												b = _date;
-												state(() {});
+												if (_date != null) {
+													b = _date;
+													state(() {});
+												}
 											});
 										},
 										behavior: HitTestBehavior.opaque,
@@ -382,8 +383,10 @@ FCDialogPickerDateInterval(BuildContext context,
 									GestureDetector(
 										onTap: () {
 											FCPicker.pickDate(context, (_date) {
-												e = _date;
-												state(() {});
+												if (_date != null) {
+													e = _date;
+													state(() {});
+												}
 											});
 										},
 										behavior: HitTestBehavior.opaque,
