@@ -2,10 +2,17 @@
   <library name="Dart Packages" type="DartPackagesLibraryType">
     <properties>
       <option name="packageNameToDirsMap">
+        <entry key="args">
+          <value>
+            <list>
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/args-1.5.2/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="asn1lib">
           <value>
             <list>
-              <option value="$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/asn1lib-0.5.3/lib" />
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/asn1lib-0.5.8/lib" />
             </list>
           </value>
         </entry>
@@ -61,14 +68,14 @@
         <entry key="dart_comm">
           <value>
             <list>
-              <option value="$USER_HOME$/.pub-cache/git/dart_comm-a14d33844a73f098da4f36394aa96e665b3ac189/lib" />
+              <option value="$USER_HOME$/.pub-cache/git/dart_comm-e259d4bde212a4800d1434823e858238e735d536/lib" />
             </list>
           </value>
         </entry>
         <entry key="encrypt">
           <value>
             <list>
-              <option value="$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/encrypt-2.0.0/lib" />
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/encrypt-2.2.0/lib" />
             </list>
           </value>
         </entry>
@@ -124,7 +131,7 @@
         <entry key="pointycastle">
           <value>
             <list>
-              <option value="$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/pointycastle-1.0.0/lib" />
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/pointycastle-1.0.1/lib" />
             </list>
           </value>
         </entry>
@@ -208,8 +215,9 @@
       </option>
     </properties>
     <CLASSES>
-      <root url="file://$USER_HOME$/.pub-cache/git/dart_comm-a14d33844a73f098da4f36394aa96e665b3ac189/lib" />
-      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/asn1lib-0.5.3/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/git/dart_comm-e259d4bde212a4800d1434823e858238e735d536/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/args-1.5.2/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/asn1lib-0.5.8/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/async-2.2.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/boolean_selector-1.0.4/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/charcode-1.1.2/lib" />
@@ -217,13 +225,13 @@
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/convert-2.1.1/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/crypto-2.0.6/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/cupertino_icons-0.1.2/lib" />
-      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/encrypt-2.0.0/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/encrypt-2.2.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/flutter_des-1.1.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/matcher-0.12.5/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/meta-1.1.6/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/path-1.6.2/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/pedantic-1.5.0/lib" />
-      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/pointycastle-1.0.0/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/pointycastle-1.0.1/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/quiver-2.0.3/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/source_span-1.5.5/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/stack_trace-1.9.3/lib" />
