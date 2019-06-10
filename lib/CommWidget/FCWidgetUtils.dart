@@ -70,7 +70,7 @@ class FCSettingItemWidget extends StatelessWidget {
 	final Widget subWidget;
 	final bool needRightArrow;
 	final EdgeInsets padding;
-	final FontWeight titleFontWeight;
+	final TextStyle titleStyle;
 	final Color backgroundColor;
 	
 	FCSettingItemWidget(this.title,
@@ -78,7 +78,7 @@ class FCSettingItemWidget extends StatelessWidget {
 		{
 			this.padding = const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
 			this.index = 0,
-			this.titleFontWeight,
+			this.titleStyle,
 			this.iconFilename,
 			this.extraInfo,
 			this.onClick,
@@ -111,7 +111,7 @@ class FCSettingItemWidget extends StatelessWidget {
 		  				padding: const EdgeInsets.only(left: 12.0),
 		  				child: Text(
 		  					title,
-		  					style: TextStyle(fontSize: 16, color: Color(0xff333333), fontWeight: titleFontWeight),
+		  					style: titleStyle,
 		  				),
 		  			),
 		  			// 附加视图 -- 尾部>图标

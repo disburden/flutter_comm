@@ -68,7 +68,7 @@
         <entry key="dart_comm">
           <value>
             <list>
-              <option value="$USER_HOME$/.pub-cache/git/dart_comm-e259d4bde212a4800d1434823e858238e735d536/lib" />
+              <option value="$USER_HOME$/.pub-cache/git/dart_comm-e3d80a9d49de38b1eb575d9debea1f163590575d/lib" />
             </list>
           </value>
         </entry>
@@ -215,7 +215,7 @@
       </option>
     </properties>
     <CLASSES>
-      <root url="file://$USER_HOME$/.pub-cache/git/dart_comm-e259d4bde212a4800d1434823e858238e735d536/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/git/dart_comm-e3d80a9d49de38b1eb575d9debea1f163590575d/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/args-1.5.2/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/asn1lib-0.5.8/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/async-2.2.0/lib" />
