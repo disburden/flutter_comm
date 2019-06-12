@@ -101,10 +101,7 @@ class FCSettingItemWidget extends StatelessWidget {
 						// 图标
 						Offstage(
 							offstage: iconFilename == null,
-							child: Padding(
-								padding: const EdgeInsets.only(left: 16.0),
-								child: iconFilename == null ? Container() : Image.asset('assets/images/${iconFilename}.png'),
-							),
+							child: iconFilename == null ? Container() : Image.asset('assets/images/${iconFilename}.png'),
 						),
 						
 						// 标题
@@ -123,14 +120,13 @@ class FCSettingItemWidget extends StatelessWidget {
 									),
 									Offstage(
 										offstage: needRightArrow == false,
-//		  							child: Icon(
-//		  								Icons.keyboard_arrow_right,
-//		  								color: Color(0x282F3133),
-//		  							),
-										child: SizedBox(
-											height: 12,
-											width: 7,
-											child: FCImageConver.fromBase64ToImage(FCConstantImages.rightArrow)
+										child: Padding(
+										  padding: const EdgeInsets.only(left:8.0),
+										  child: SizedBox(
+										  	height: 12,
+										  	width: 7,
+										  	child: FCImageConver.fromBase64ToImage(FCConstantImages.rightArrow)
+										  ),
 										),
 									),
 								],
