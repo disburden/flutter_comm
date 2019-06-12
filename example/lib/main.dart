@@ -30,31 +30,10 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-	int _counter = 0;
 	
-	FCTextView tv;
+	
 	
 	void _incrementCounter() {
-//		FCShowJhTransparent(context: context);
-//	FCShowJhNormal(context: context);
-
-//		Future.delayed(Duration(seconds: 3),(){
-//			FCDismissDialog(context);
-//		});
-		
-
-
-
-//		FCShowStateDialog(context: context,text: "hoho是啊的沙发斯蒂芬就是地方阿萨德分撒旦发发送到发的",iconImage: CircularProgressIndicator());
-//		Future.delayed(Duration(seconds: 3),(){
-//			FCShowStateDialog(context: context,text: "xixi",iconImage: Icon(Icons.brightness_3,color: Colors.cyan,));
-//		});
-	
-	FCDialogPickerDateInterval(context, (_st){
-	
-	});
-	
-	
 	}
 	
 	@override
@@ -62,26 +41,11 @@ class _MyHomePageState extends State<MyHomePage> {
 		TextEditingController _ctrl = TextEditingController();
 		_ctrl.text = "disburden";
 		
-		tv = FCTextView(
-			height: 150.0,
-			width: MediaQuery
-				.of(context)
-				.size
-				.width,
-			backgroundColor: Colors.cyan,
-			controller: _ctrl,
-		);
-		
 		FCIconNoti inoti = FCIconNoti(
-//			Colors.cyan,
-//			8,
 			icon: Icon(Icons.print),
 			title: '注意了',
 			content: "注意了注意了注意了注意了注意了注意了注意了注意了注意了注意了注意了注意了注意了注意了注意了注意了注意了注意了注意了注意了",
-//			textStyle:TextStyle(
-//				color: Colors.orange,
-//				fontSize: 12,
-//			),
+		
 		);
 		
 		return Scaffold(
@@ -93,36 +57,36 @@ class _MyHomePageState extends State<MyHomePage> {
 			body: Center(
 				// Center is a layout widget. It takes a single child and positions it
 				// in the middle of the parent.
-				child: SingleChildScrollView(
-				  child: Column(
-				  	mainAxisAlignment: MainAxisAlignment.center,
-				  	children: <Widget>[
-				  		tv,
-				  		FCImageButton(
-				  			image: Icon(Icons.map),
-				  			tag: 1,
-				  			text: Text("nnn"),
-				  			onClick: (_idx) {
-				  				print("$_idx");
-				  			},
-				  			gapBetweenImageAndText: 8.0,
-				  			style: ImageButtonStyle.topImageButtonText,
-				  			padding: EdgeInsets.zero,
-				  		),
-				  		Expanded(
-				  			child: ListView.builder(
-				  				itemBuilder: (context, idx) {
-				  					return Container(
-				  						height: 30,
-				  						child: Text("$idx"),
-				  					);
-				  				},
-				  				itemCount: 30,
-				  			),
-				  		),
-				  		inoti,
-				  	],
-				  ),
+				child: Column(
+					mainAxisAlignment: MainAxisAlignment.center,
+					children: <Widget>[
+						FCImageButton(
+							image: Icon(Icons.map),
+							tag: 1,
+							text: Text("nnn"),
+							onClick: (_idx) {
+								print("$_idx");
+							},
+							gapBetweenImageAndText: 8.0,
+							style: ImageButtonStyle.topImageButtonText,
+							padding: EdgeInsets.zero,
+						),
+						FCSettingItemWidget("hoho"),
+						FCSettingItemWidget("xixi"),
+						FCLine(),
+//						Expanded(
+//							child: ListView.builder(
+//								itemBuilder: (context, idx) {
+//									return Container(
+//										height: 30,
+//										child: Text("$idx"),
+//									);
+//								},
+//								itemCount: 30,
+//							),
+//						),
+						inoti,
+					],
 				),
 			),
 			floatingActionButton: FloatingActionButton(
@@ -133,3 +97,10 @@ class _MyHomePageState extends State<MyHomePage> {
 		);
 	}
 }
+
+@override
+Widget build(BuildContext context) {
+	// TODO: implement build
+	return null;
+}
+

@@ -107,12 +107,9 @@ class FCSettingItemWidget extends StatelessWidget {
 		  			),
 		  			
 		  			// 标题
-		  			Padding(
-		  				padding: const EdgeInsets.only(left: 12.0),
-		  				child: Text(
-		  					title,
-		  					style: titleStyle,
-		  				),
+		  			Text(
+		  				title,
+		  				style: titleStyle,
 		  			),
 		  			// 附加视图 -- 尾部>图标
 		  			Expanded(
@@ -123,14 +120,11 @@ class FCSettingItemWidget extends StatelessWidget {
 		  							offstage: subWidget == null,
 		  							child: subWidget,
 		  						),
-		  						Padding(
-		  							padding: const EdgeInsets.only(right: 8.0),
-		  							child: Offstage(
-		  								offstage: needRightArrow == false,
-		  								child: Icon(
-		  									Icons.keyboard_arrow_right,
-		  									color: Color(0x282F3133),
-		  								),
+		  						Offstage(
+		  							offstage: needRightArrow == false,
+		  							child: Icon(
+		  								Icons.keyboard_arrow_right,
+		  								color: Color(0x282F3133),
 		  							),
 		  						),
 		  					],
