@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
+import 'package:flutter_comm/CommImage/CoreImage.dart';
 
 
 
@@ -90,49 +91,54 @@ class FCSettingItemWidget extends StatelessWidget {
 	Widget content() {
 		return Container(
 			decoration: BoxDecoration(
-				color:backgroundColor
+				color: backgroundColor
 			),
-		  child: Padding(
-		  	padding: padding,
-		  	child: Row(
-		  		crossAxisAlignment: CrossAxisAlignment.center,
-		  		children: <Widget>[
-		  			// 图标
-		  			Offstage(
-		  				offstage: iconFilename == null,
-		  				child: Padding(
-		  					padding: const EdgeInsets.only(left: 16.0),
-		  					child: iconFilename == null ? Container() : Image.asset('assets/images/${iconFilename}.png'),
-		  				),
-		  			),
-		  			
-		  			// 标题
-		  			Text(
-		  				title,
-		  				style: titleStyle,
-		  			),
-		  			// 附加视图 -- 尾部>图标
-		  			Expanded(
-		  				child: Row(
-		  					mainAxisAlignment: MainAxisAlignment.end,
-		  					children: <Widget>[
-		  						Offstage(
-		  							offstage: subWidget == null,
-		  							child: subWidget,
-		  						),
-		  						Offstage(
-		  							offstage: needRightArrow == false,
-		  							child: Icon(
-		  								Icons.keyboard_arrow_right,
-		  								color: Color(0x282F3133),
-		  							),
-		  						),
-		  					],
-		  				),
-		  			),
-		  		],
-		  	),
-		  ),
+			child: Padding(
+				padding: padding,
+				child: Row(
+					crossAxisAlignment: CrossAxisAlignment.center,
+					children: <Widget>[
+						// 图标
+						Offstage(
+							offstage: iconFilename == null,
+							child: Padding(
+								padding: const EdgeInsets.only(left: 16.0),
+								child: iconFilename == null ? Container() : Image.asset('assets/images/${iconFilename}.png'),
+							),
+						),
+						
+						// 标题
+						Text(
+							title,
+							style: titleStyle,
+						),
+						// 附加视图 -- 尾部>图标
+						Expanded(
+							child: Row(
+								mainAxisAlignment: MainAxisAlignment.end,
+								children: <Widget>[
+									Offstage(
+										offstage: subWidget == null,
+										child: subWidget,
+									),
+									Offstage(
+										offstage: needRightArrow == false,
+//		  							child: Icon(
+//		  								Icons.keyboard_arrow_right,
+//		  								color: Color(0x282F3133),
+//		  							),
+										child: SizedBox(
+											height: 12,
+											width: 7,
+											child: FCImageConver.fromBase64ToImage(FCConstantImages.rightArrow)
+										),
+									),
+								],
+							),
+						),
+					],
+				),
+			),
 		);
 	}
 	
