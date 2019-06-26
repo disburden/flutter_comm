@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-typedef Clicked = Function(int);
+typedef Clicked = Function(int,String);
 
 enum ImageButtonStyle { topImageButtonText, leftImageRightText, leftTextRightImage }
 
@@ -12,6 +12,7 @@ class FCImageButton extends StatefulWidget {
 	final ImageButtonStyle style;
 	final Clicked onClick;
 	int tag;
+	String flag;
 	
 	FCImageButton({
 		this.image,
@@ -21,6 +22,7 @@ class FCImageButton extends StatefulWidget {
 		this.style,
 		this.onClick,
 		this.tag = -1,
+		this.flag = "",
 	});
 	
 	@override
@@ -80,7 +82,7 @@ class _FCImageButtonState extends State<FCImageButton> {
 	Widget build(BuildContext context) {
 		return GestureDetector(
 			onTap: () {
-				widget.onClick(widget.tag);
+				widget.onClick(widget.tag,widget.flag);
 			},
 			behavior: HitTestBehavior.opaque,
 			child: Padding(

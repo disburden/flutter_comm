@@ -64,7 +64,7 @@ class _MyHomePageState extends State<MyHomePage> {
 							image: Icon(Icons.map),
 							tag: 1,
 							text: Text("nnn"),
-							onClick: (_idx) {
+							onClick: (_idx,_flag) {
 								print("$_idx");
 							},
 							gapBetweenImageAndText: 8.0,
