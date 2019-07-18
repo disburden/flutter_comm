@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:dart_comm/dart_comm.dart';
+import 'package:dartcomm/dartcomm.dart';
 import 'FCPicker.dart';
 
 

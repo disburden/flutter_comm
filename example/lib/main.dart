@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_comm/flutter_comm.dart';
-import 'package:dart_comm/dart_comm.dart';
+import 'package:dartcomm/dartcomm.dart';
 import 'dart:typed_data';
 
 void main() => runApp(MyApp());
