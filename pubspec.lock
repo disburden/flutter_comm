@@ -7,7 +7,7 @@ packages:
       name: async
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "2.2.0"
+    version: "2.3.0"
   boolean_selector:
     dependency: transitive
     description:
@@ -47,8 +47,8 @@ packages:
     dependency: "direct main"
     description:
       path: "."
-      ref: HEAD
-      resolved-ref: "37cc61c4992c16c2c71e59b3b6d5fbd3628f0bc3"
+      ref: "09443286e429f0b785d77fd7c5b0780dcefa24b6"
+      resolved-ref: "09443286e429f0b785d77fd7c5b0780dcefa24b6"
       url: "https://github.com/disburden/dartcomm.git"
     source: git
     version: "0.0.1"
@@ -75,7 +75,7 @@ packages:
       name: meta
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "1.1.6"
+    version: "1.1.7"
   path:
     dependency: transitive
     description:

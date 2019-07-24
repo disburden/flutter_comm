@@ -2,31 +2,16 @@
   <library name="Dart Packages" type="DartPackagesLibraryType">
     <properties>
       <option name="packageNameToDirsMap">
-        <entry key="args">
-          <value>
-            <list>
-              <option value="$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/args-1.5.2/lib" />
-            </list>
-          </value>
-        </entry>
-        <entry key="asn1lib">
-          <value>
-            <list>
-              <option value="$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/asn1lib-0.5.8/lib" />
-            </list>
-          </value>
-        </entry>
         <entry key="async">
           <value>
             <list>
-              <option value="$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/async-2.2.0/lib" />
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/async-2.3.0/lib" />
             </list>
           </value>
         </entry>
         <entry key="boolean_selector">
           <value>
             <list>
-              <option value="$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/boolean_selector-1.0.4/lib" />
               <option value="$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/boolean_selector-1.0.5/lib" />
             </list>
           </value>
@@ -66,24 +51,11 @@
             </list>
           </value>
         </entry>
-        <entry key="dart_comm">
-          <value>
-            <list>
-              <option value="$USER_HOME$/.pub-cache/git/dart_comm-e3d80a9d49de38b1eb575d9debea1f163590575d/lib" />
-            </list>
-          </value>
-        </entry>
         <entry key="dartcomm">
           <value>
             <list>
               <option value="$USER_HOME$/.pub-cache/git/dartcomm-37cc61c4992c16c2c71e59b3b6d5fbd3628f0bc3/lib" />
-            </list>
-          </value>
-        </entry>
-        <entry key="encrypt">
-          <value>
-            <list>
-              <option value="$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/encrypt-2.2.0/lib" />
+              <option value="$USER_HOME$/.pub-cache/git/dartcomm-09443286e429f0b785d77fd7c5b0780dcefa24b6/lib" />
             </list>
           </value>
         </entry>
@@ -91,13 +63,6 @@
           <value>
             <list>
               <option value="$USER_HOME$/install/flutter/packages/flutter/lib" />
-            </list>
-          </value>
-        </entry>
-        <entry key="flutter_des">
-          <value>
-            <list>
-              <option value="$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/flutter_des-1.1.0/lib" />
             </list>
           </value>
         </entry>
@@ -118,7 +83,7 @@
         <entry key="meta">
           <value>
             <list>
-              <option value="$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/meta-1.1.6/lib" />
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/meta-1.1.7/lib" />
             </list>
           </value>
         </entry>
@@ -132,15 +97,7 @@
         <entry key="pedantic">
           <value>
             <list>
-              <option value="$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/pedantic-1.5.0/lib" />
               <option value="$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/pedantic-1.8.0+1/lib" />
-            </list>
-          </value>
-        </entry>
-        <entry key="pointycastle">
-          <value>
-            <list>
-              <option value="$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/pointycastle-1.0.1/lib" />
             </list>
           </value>
         </entry>
@@ -200,13 +157,6 @@
             </list>
           </value>
         </entry>
-        <entry key="tripledes">
-          <value>
-            <list>
-              <option value="$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/tripledes-2.1.0/lib" />
-            </list>
-          </value>
-        </entry>
         <entry key="typed_data">
           <value>
             <list>
@@ -224,26 +174,19 @@
       </option>
     </properties>
     <CLASSES>
-      <root url="file://$USER_HOME$/.pub-cache/git/dart_comm-e3d80a9d49de38b1eb575d9debea1f163590575d/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/git/dartcomm-09443286e429f0b785d77fd7c5b0780dcefa24b6/lib" />
       <root url="file://$USER_HOME$/.pub-cache/git/dartcomm-37cc61c4992c16c2c71e59b3b6d5fbd3628f0bc3/lib" />
-      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/args-1.5.2/lib" />
-      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/asn1lib-0.5.8/lib" />
-      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/async-2.2.0/lib" />
-      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/boolean_selector-1.0.4/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/async-2.3.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/boolean_selector-1.0.5/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/charcode-1.1.2/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/collection-1.14.11/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/convert-2.1.1/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/crypto-2.0.6/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/cupertino_icons-0.1.2/lib" />
-      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/encrypt-2.2.0/lib" />
-      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/flutter_des-1.1.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/matcher-0.12.5/lib" />
-      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/meta-1.1.6/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/meta-1.1.7/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/path-1.6.2/lib" />
-      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/pedantic-1.5.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/pedantic-1.8.0+1/lib" />
-      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/pointycastle-1.0.1/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/quiver-2.0.3/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/source_span-1.5.5/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/stack_trace-1.9.3/lib" />
@@ -251,7 +194,6 @@
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/string_scanner-1.0.4/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/term_glyph-1.1.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/test_api-0.2.5/lib" />
-      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/tripledes-2.1.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/typed_data-1.1.6/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/vector_math-2.0.8/lib" />
       <root url="file://$USER_HOME$/install/flutter/bin/cache/pkg/sky_engine/lib" />
