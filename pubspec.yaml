@@ -14,6 +14,8 @@ dependencies:
 #  dartcomm:
 #    git: https://github.com/disburden/dartcomm.git
 
+  image: ^2.1.4
+  flutter_image_compress: ^0.6.3
 
   dartcomm:
     git:
