@@ -2,6 +2,7 @@
 import 'dart:convert';
 import 'package:flutter/material.dart' as mt;
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'dart:typed_data';
 import 'dart:ui' as ui;
 import 'package:image/image.dart' as ii;
@@ -54,5 +55,16 @@ class FCImageConver{
 		return Uint8List.fromList(intList);
 	}
 	
-	
+	///截取widget图片
+	static Future<Uint8List> captureWidget(GlobalKey gk) async {
+		RenderRepaintBoundary boundary = gk.currentContext.findRenderObject();
+		
+		//生成图片
+		ui.Image image = await boundary.toImage(pixelRatio: 3.0);
+		
+		//将图片转成Uint8List
+		ByteData byteData = await image.toByteData(format: ui.ImageByteFormat.png);
+		Uint8List pngBytes = byteData.buffer.asUint8List();
+		return pngBytes;
+	}
 }
