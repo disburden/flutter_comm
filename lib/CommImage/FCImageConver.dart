@@ -4,8 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'dart:typed_data';
 import 'dart:ui' as ui;
-import 'package:image/image.dart' as ii;
-import 'package:flutter_image_compress/flutter_image_compress.dart';
+
 
 
 /// 很多库中定义和图片相关的类都叫Image
@@ -48,11 +47,7 @@ class FCImageConver{
 	   return Image.memory(pngBytes);
    }
    
-   ///旋转图片
-	static Future<Uint8List> rotateImage(Uint8List imageData,int degree) async {
-		var intList = await FlutterImageCompress.compressWithList(imageData, rotate: degree);
-		return Uint8List.fromList(intList);
-	}
+
 	
 	
 }

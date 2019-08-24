@@ -7,6 +7,7 @@ import 'dart:ui' as ui;
 import 'package:image/image.dart' as ii;
 import 'package:path_provider/path_provider.dart';
 import 'package:path/path.dart' as path;
+import 'package:flutter_image_compress/flutter_image_compress.dart';
 
 class FCImageOperation {
 	///截取widget图片
@@ -31,5 +32,11 @@ class FCImageOperation {
 		await newFile.writeAsBytesSync(imageData);
 		
 		return newFile.path;
+	}
+	
+	///旋转图片
+	static Future<Uint8List> rotateImage(Uint8List imageData,int degree) async {
+		var intList = await FlutterImageCompress.compressWithList(imageData, rotate: degree);
+		return Uint8List.fromList(intList);
 	}
 }
