@@ -27,7 +27,7 @@ class FCImageOperation {
 		//dirtype预留的,用来指定保存目录的类型,比如用户document目录还是临时目录
 		
 		Directory appDocDir = await getApplicationDocumentsDirectory();
-		File newFile = File(path.join(appDocDir.path, 'dart.png'));
+		File newFile = File(path.join(appDocDir.path, filenmae));
 		await newFile.writeAsBytesSync(imageData);
 		
 		return newFile.path;
