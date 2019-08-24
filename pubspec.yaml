@@ -16,6 +16,8 @@ dependencies:
 
   image: ^2.1.4
   flutter_image_compress: ^0.6.3
+  # 文件存储
+  path_provider: ^1.2.0
 
   dartcomm:
     git:

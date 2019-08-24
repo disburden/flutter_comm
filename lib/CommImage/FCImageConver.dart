@@ -1,6 +1,5 @@
 
 import 'dart:convert';
-import 'package:flutter/material.dart' as mt;
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'dart:typed_data';
@@ -19,9 +18,9 @@ import 'package:flutter_image_compress/flutter_image_compress.dart';
 
 class FCImageConver{
 	///通过base64得到mt.Image
-	static mt.Image fromBase64ToImage(String base64Str){
+	static Image fromBase64ToImage(String base64Str){
 		Uint8List bytes = base64.decode(base64Str);
-		return mt.Image.memory(bytes);
+		return Image.memory(bytes);
 	}
 	
 	///把ui.Image转成unit8Lit
@@ -43,10 +42,10 @@ class FCImageConver{
    }
    
    ///把uiimage转成mtimage
-   static Future<mt.Image> uiimage2mtimage(ui.Image image) async {
+   static Future<Image> uiimage2mtimage(ui.Image image) async {
 	   ByteData byteData = await image.toByteData(format: ui.ImageByteFormat.png);
 	   Uint8List pngBytes = byteData.buffer.asUint8List();
-	   return mt.Image.memory(pngBytes);
+	   return Image.memory(pngBytes);
    }
    
    ///旋转图片
@@ -55,16 +54,5 @@ class FCImageConver{
 		return Uint8List.fromList(intList);
 	}
 	
-	///截取widget图片
-	static Future<Uint8List> captureWidget(GlobalKey gk) async {
-		RenderRepaintBoundary boundary = gk.currentContext.findRenderObject();
-		
-		//生成图片
-		ui.Image image = await boundary.toImage(pixelRatio: 3.0);
-		
-		//将图片转成Uint8List
-		ByteData byteData = await image.toByteData(format: ui.ImageByteFormat.png);
-		Uint8List pngBytes = byteData.buffer.asUint8List();
-		return pngBytes;
-	}
+	
 }
