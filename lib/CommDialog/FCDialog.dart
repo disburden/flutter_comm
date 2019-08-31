@@ -47,14 +47,12 @@ Future<Null> FCDialogShowJhNormal({@required BuildContext context}) async {
 OverlayEntry overlayEntry;
 
 /// 显示加载菊花,有黑色半透明的背景
-FCDialogShowJhTransparent({@required BuildContext context}) async {
+FCDialogShowJhTransparent({@required BuildContext context,Widget child}) async {
 	_dialogType = DialogType.overlay;
 	var overlayState = Overlay.of(context);
 	
-	
-	
 	overlayEntry = new OverlayEntry(builder: (context) {
-		return Center(child: CircularProgressIndicator());
+		return child==null?Center(child: CircularProgressIndicator()):child;
 	});
 	
 	overlayState.insert(overlayEntry);
