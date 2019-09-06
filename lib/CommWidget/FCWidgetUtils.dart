@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
 import 'package:flutter_comm/CommImage/CoreImage.dart';
+import 'package:dartcomm/dartcomm.dart';
 
 
 
@@ -13,6 +14,9 @@ class FCWidgetUtils {
 	
 	/// 根据样式,计算出文本的宽度
 	static double calculateTextWidth(TextStyle style,String text){
+		if (DCDataType.isAir(text) || style==null){
+			return 0;
+		}
 		final textPainter = TextPainter(
 			textDirection: TextDirection.ltr,
 			text: TextSpan(
