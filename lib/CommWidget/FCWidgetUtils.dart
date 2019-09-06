@@ -10,6 +10,19 @@ class FCWidgetUtils {
 		math.Random random = math.Random();
 		return Color.fromARGB(255, random.nextInt(255), random.nextInt(255), random.nextInt(255));
 	}
+	
+	/// 根据样式,计算出文本的宽度
+	static double calculateTextWidth(TextStyle style,String text){
+		final textPainter = TextPainter(
+			textDirection: TextDirection.ltr,
+			text: TextSpan(
+				text: text,
+				style: style,
+			),
+		);
+		textPainter.layout();
+		return textPainter.width;
+	}
 }
 
 
