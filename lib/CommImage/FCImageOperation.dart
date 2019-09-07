@@ -11,7 +11,6 @@ import 'package:path_provider/path_provider.dart';
 import 'package:path/path.dart' as path;
 import 'package:flutter_image_compress/flutter_image_compress.dart';
 
-//part 'FCCaptureScrollView.dart';
 part 'package:flutter_comm/CommImage/FCCaptureScrollView.dart';
 
 

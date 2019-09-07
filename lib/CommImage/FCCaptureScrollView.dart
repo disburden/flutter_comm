@@ -28,7 +28,6 @@ class _FCCaptureScrollViewState extends State<FCCaptureScrollView> {
 		}
 	}
 	
-	
 	@override
 	Widget build(BuildContext context) {
 		return SingleChildScrollView(
