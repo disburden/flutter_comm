@@ -2,11 +2,8 @@ library FCWidgetUtils;
 
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
-import 'package:flutter_comm/CommImage/CoreImage.dart';
 import 'package:dartcomm/dartcomm.dart';
 
-part 'package:flutter_comm/CommWidget/FCSettingItemWidget.dart';
-part 'package:flutter_comm/CommWidget/FCLine.dart';
 
 class FCWidgetUtils {
 	/// 生成一个随机颜色

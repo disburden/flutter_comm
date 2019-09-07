@@ -1,4 +1,5 @@
-part of 'package:flutter_comm/CommWidget/FCWidgetUtils.dart';
+
+import 'package:flutter/material.dart';
 
 class FCLine extends StatelessWidget {
 	final double height;

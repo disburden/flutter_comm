@@ -13,11 +13,15 @@ export 'FCRoundedCorner.dart';
 export 'FCTextView.dart';
 
 /// 一些小工具
-/// 分割线,
 /// 随机颜色
 /// 计算文本宽度
-/// 设置页面各个行的样式组件
 export 'FCWidgetUtils.dart';
+
+/// 分割线
+export 'FCLine.dart';
+
+/// 设置页面各个行的样式组件
+export 'FCSettingItemWidget.dart';
 
 /// 可以动态添加子组件
 export 'FCAddableWidget.dart';
