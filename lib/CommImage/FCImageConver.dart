@@ -35,12 +35,12 @@ class FCImageConver{
 	   ImageStream imageStream = image.image.resolve(ImageConfiguration.empty);
 	   /// 然后通过添加流的监听器获取ui.Image
 	   /// 回调中的imageInfo就带有ui.Image的数据
-//	   imageStream.addListener(ImageStreamListener((_info,_){
-//		   callback(_info.image);
-//	   }));
-	   imageStream.addListener((_info,_){
+	   imageStream.addListener(ImageStreamListener((_info,_){
 		   callback(_info.image);
-	   });
+	   }));
+//	   imageStream.addListener((_info,_){
+//		   callback(_info.image);
+//	   });
    }
    
    ///把uiimage转成mtimage
@@ -49,8 +49,5 @@ class FCImageConver{
 	   Uint8List pngBytes = byteData.buffer.asUint8List();
 	   return Image.memory(pngBytes);
    }
-   
 
-	
-	
 }
