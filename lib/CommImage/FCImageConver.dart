@@ -1,4 +1,5 @@
 
+import 'dart:async';
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -29,8 +30,8 @@ class FCImageConver{
 		return pngBytes;
 	}
 	
-	///把mtimage转成uiimage
-   static mtimage2uiimage(Image image,callback(ui.Image img)){
+	///把mtimage转成uiimage(回调方式)
+   static mtimage2uiimageWitchCb(Image image,callback(ui.Image img)){
 	   /// 要先从Image中拿到图片数据流ImageStream,在Image的ImagePrivode里
 	   ImageStream imageStream = image.image.resolve(ImageConfiguration.empty);
 	   /// 然后通过添加流的监听器获取ui.Image
@@ -43,11 +44,26 @@ class FCImageConver{
 //	   });
    }
    
+   static Future<ui.Image> mtimage2uiimage(Image image) async{
+	   ImageStream imageStream = image.image.resolve(ImageConfiguration());
+	   Completer<ui.Image> completer = Completer<ui.Image>();
+	   void imageListener(ImageInfo info, bool synchronousCall) {
+		   ui.Image image = info.image;
+		   completer.complete(image);
+		   imageStream.removeListener(ImageStreamListener(imageListener));
+	   }
+	   imageStream.addListener(ImageStreamListener(imageListener));
+	   return completer.future;
+   }
+   
    ///把uiimage转成mtimage
    static Future<Image> uiimage2mtimage(ui.Image image) async {
 	   ByteData byteData = await image.toByteData(format: ui.ImageByteFormat.png);
 	   Uint8List pngBytes = byteData.buffer.asUint8List();
 	   return Image.memory(pngBytes);
    }
+   
+   
+   
 
 }
