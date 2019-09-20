@@ -23,6 +23,13 @@ class FCImageConver{
 		return Image.memory(bytes);
 	}
 	
+	///通过base64得到mt.Image
+	static Future<String> mtimage2base64(Image mtimage) async{
+		ui.Image uiimage = await mtimage2uiimage(mtimage);
+		Uint8List bytes = await uiimage2unit8list(uiimage);
+		return base64.encode(bytes);
+	}
+	
 	///把ui.Image转成unit8Lit
 	static Future<Uint8List> uiimage2unit8list(ui.Image image) async{
 		ByteData byteData = await image.toByteData(format: ui.ImageByteFormat.png);
@@ -43,7 +50,8 @@ class FCImageConver{
 //		   callback(_info.image);
 //	   });
    }
-   
+	
+	///把mtimage转成uiimage(异步方式)
    static Future<ui.Image> mtimage2uiimage(Image image) async{
 	   ImageStream imageStream = image.image.resolve(ImageConfiguration());
 	   Completer<ui.Image> completer = Completer<ui.Image>();
@@ -62,8 +70,4 @@ class FCImageConver{
 	   Uint8List pngBytes = byteData.buffer.asUint8List();
 	   return Image.memory(pngBytes);
    }
-   
-   
-   
-
 }
