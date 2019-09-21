@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'dart:typed_data';
 import 'dart:ui' as ui;
+import 'package:image/image.dart' as ii;
 
 
 
@@ -70,4 +71,23 @@ class FCImageConver{
 	   Uint8List pngBytes = byteData.buffer.asUint8List();
 	   return Image.memory(pngBytes);
    }
+	
+	///把mtimage转成uint8list
+	static Future<Uint8List> mtimage2uint8list(Image mtimage) async {
+		ui.Image _uiimage = await mtimage2uiimage(mtimage);
+		Uint8List _ul = await uiimage2unit8list(_uiimage);
+		return _ul;
+	}
+	
+	///把mtimage转成iimage
+	static Future<ii.Image> mtimage2iimage(Image mtimage) async {
+		Uint8List _ul = await mtimage2uint8list(mtimage);
+		ii.Image _iimage= ii.decodeImage(_ul);
+		return _iimage;
+	}
+	
+	///把iimage转成uint8list
+	static Future<Uint8List> iimage2Uint8list(ii.Image iimage) async {
+		return ii.encodePng(iimage);
+	}
 }
