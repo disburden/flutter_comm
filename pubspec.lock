@@ -61,8 +61,8 @@ packages:
     dependency: "direct main"
     description:
       path: "."
-      ref: "4052ec805a4f7a78178b25de3591a0ae67a5284e"
-      resolved-ref: "4052ec805a4f7a78178b25de3591a0ae67a5284e"
+      ref: "0d07f8b5719cca2ca52d11f46865d98a9a5a2f3f"
+      resolved-ref: "0d07f8b5719cca2ca52d11f46865d98a9a5a2f3f"
       url: "https://github.com/disburden/dartcomm.git"
     source: git
     version: "0.0.1"
