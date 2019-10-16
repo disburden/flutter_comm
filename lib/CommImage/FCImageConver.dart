@@ -7,15 +7,11 @@ import 'dart:typed_data';
 import 'dart:ui' as ui;
 import 'package:image/image.dart' as ii;
 
-
-
 /// 很多库中定义和图片相关的类都叫Image
 /// 所以所有的Image类前面都带有库名
 /// 比如ui.Image或者mt.Image
 /// 一般情况下mt.Image是个widget
 /// ui.Image通常会被包装成ImageProvider
-
-
 
 class FCImageConver{
 	///通过base64得到mt.Image

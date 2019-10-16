@@ -27,6 +27,34 @@ class FCWidgetUtils {
 		textPainter.layout();
 		return textPainter.width;
 	}
+	
+	static Widget nodataWidget({bool isNetError=false,Color mainColor=const Color(0xff999999)}){
+		
+		IconData icon = isNetError?Icons.signal_wifi_off:Icons.inbox;
+		String hitString = isNetError?"网络连接失败":"未找到相关数据";
+		
+		return Material(
+			child: Center(
+				child: Column(
+					mainAxisAlignment: MainAxisAlignment.center,
+					crossAxisAlignment: CrossAxisAlignment.center,
+					children: <Widget>[
+						Icon(icon,color: mainColor,size: 64,),
+						Padding(
+							padding: const EdgeInsets.only(top: 16.0),
+							child: Text(
+								hitString,
+								style: TextStyle(
+									color: mainColor,
+									fontSize: 14
+								),
+							),
+						),
+					],
+				),
+			),
+		);
+	}
 }
 
 

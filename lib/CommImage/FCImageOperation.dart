@@ -42,4 +42,9 @@ class FCImageOperation {
 		var intList = await FlutterImageCompress.compressWithList(imageData, rotate: degree);
 		return Uint8List.fromList(intList);
 	}
+	
+	///从图片的指定区域裁剪出新的小图片
+//	static Future<ui.Image> subImage(ui.Image originImage,Rect clipRect){
+//
+//	}
 }
