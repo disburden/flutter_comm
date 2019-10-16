@@ -28,7 +28,7 @@ class FCWidgetUtils {
 		return textPainter.width;
 	}
 	
-	static Widget nodataWidget({bool isNetError=false,Color mainColor=const Color(0xff999999)}){
+	static Widget noDataWidget({bool isNetError=false,Color mainColor=const Color(0xff999999)}){
 		
 		IconData icon = isNetError?Icons.signal_wifi_off:Icons.inbox;
 		String hitString = isNetError?"网络连接失败":"未找到相关数据";
