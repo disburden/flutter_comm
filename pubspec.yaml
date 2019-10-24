@@ -22,7 +22,7 @@ dependencies:
   dartcomm:
     git:
       url: https://github.com/disburden/dartcomm.git
-      ref: 0d07f8b5719cca2ca52d11f46865d98a9a5a2f3f
+      ref: 7accb65581976322b7600c7b3dc8c00072428e43
 
 dev_dependencies:
   flutter_test:
