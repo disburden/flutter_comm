@@ -56,13 +56,13 @@ packages:
       name: crypto
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "2.0.6"
+    version: "2.1.3"
   dartcomm:
     dependency: "direct main"
     description:
       path: "."
-      ref: cd5dd14bb207d2a21a106c01bcffe5d762573c8c
-      resolved-ref: cd5dd14bb207d2a21a106c01bcffe5d762573c8c
+      ref: "7a099b84a4ccf080da78ebbc20a023c9f88f6d01"
+      resolved-ref: "7a099b84a4ccf080da78ebbc20a023c9f88f6d01"
       url: "https://github.com/disburden/dartcomm.git"
     source: git
     version: "0.0.1"
@@ -131,7 +131,7 @@ packages:
       name: petitparser
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "2.2.1"
+    version: "2.4.0"
   platform:
     dependency: transitive
     description:
@@ -213,7 +213,7 @@ packages:
       name: xml
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "3.4.1"
+    version: "3.5.0"
 sdks:
-  dart: ">=2.2.2 <3.0.0"
+  dart: ">=2.4.0 <3.0.0"
   flutter: ">=0.1.4 <2.0.0"
