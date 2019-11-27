@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:dartcomm/dartcomm.dart';
+import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 import 'FCPicker.dart';
 
 
@@ -327,6 +328,113 @@ FCDialogInputWithOneField(BuildContext context,
 
 
 FCDialogPickerDateInterval(BuildContext context,
+	DateIntervalDone selectedDone,
+	{
+		String cancelStr = '取消',
+		String ensureStr = "确定",
+		Color backgroundColor = const Color.fromARGB(0xcc, 0x00, 0x00, 0x00),
+		Color boderColor = Colors.white,
+		Color textColor = Colors.white,
+		VoidCallback onCancel,
+	}) {
+	TimeStyle dtstyle = TimeStyle.YEAR_hg_MO_hg_DAY;
+	DateTime b = DateTime.now();
+	DateTime e = DateTime.now();
+	
+	showDialog(
+		context: context,
+		builder: (context) {
+			return StatefulBuilder(
+				builder: (context, state) {
+					return Theme(
+						data: Theme.of(context).copyWith(
+							dialogBackgroundColor: backgroundColor,
+						),
+						child: new AlertDialog(
+							content: Row(
+								mainAxisAlignment: MainAxisAlignment.center,
+								children: <Widget>[
+									GestureDetector(
+										onTap: () {
+											DatePicker.showDatePicker(context,
+												showTitleActions: true,
+												onChanged: (date) {
+//														print('change ${date.runtimeType}');
+												}, onConfirm: (_date) {
+													b = _date;
+													state(() {});
+												}, currentTime: DateTime.now(), locale: LocaleType.zh);
+										},
+										behavior: HitTestBehavior.opaque,
+										child: Row(
+											mainAxisAlignment: MainAxisAlignment.center,
+											children: <Widget>[
+												Text(DCTime.formatDateTime(dateTimeString: b.toString(), style: dtstyle), style: TextStyle(
+													fontSize: 14,
+													color: textColor
+												),),
+												Icon(Icons.arrow_drop_down, color: textColor,),
+											],
+										),
+									),
+									Text(" 到  ", style: TextStyle(
+										fontSize: 14,
+										color: textColor
+									),),
+									GestureDetector(
+										onTap: () {
+											DatePicker.showDatePicker(context,
+												showTitleActions: true,
+												onChanged: (date) {
+//														print('change ${date.runtimeType}');
+												}, onConfirm: (_date) {
+													e = _date;
+													state(() {});
+												}, currentTime: DateTime.now(), locale: LocaleType.zh);
+										},
+										behavior: HitTestBehavior.opaque,
+										child: Row(
+											mainAxisAlignment: MainAxisAlignment.center,
+											children: <Widget>[
+												Text(DCTime.formatDateTime(dateTimeString: e.toString(), style: dtstyle), style: TextStyle(
+													fontSize: 14,
+													color: textColor
+												),),
+												Icon(Icons.arrow_drop_down, color: textColor,),
+											],
+										),
+									),
+								],
+							),
+							actions: <Widget>[
+								new FlatButton(
+									child: Text(cancelStr, style: TextStyle(
+										color: textColor
+									),),
+									onPressed: () {
+										if (onCancel == null) {
+											Navigator.of(context).pop();
+										} else {
+											onCancel();
+										}
+									}
+								),
+								new FlatButton(
+									child: Text(ensureStr, style: TextStyle(
+										color: textColor
+									),),
+									onPressed: () {
+										selectedDone([b, e]);
+									}
+								)
+							]
+						),
+					);
+				},
+			);
+		});
+}
+FCDialogPickerDateIntervalOld(BuildContext context,
 	DateIntervalDone selectedDone,
 	{
 		String cancelStr = '取消',

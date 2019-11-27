@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 
 typedef finishSelect<I,T> = void Function(I idex,T value);
 
@@ -109,7 +110,7 @@ class FCPicker {
 	
 	/// 选择日期
 	ValueChanged<DateTime> selectDate;
-	static Future<void> pickDate(BuildContext context,ValueChanged<DateTime> selectDate) async {
+	static Future<void> pickDateOld(BuildContext context,ValueChanged<DateTime> selectDate) async {
 		final DateTime picked = await showDatePicker(
 			context: context,
 			initialDate: DateTime.now(),
@@ -117,6 +118,15 @@ class FCPicker {
 			lastDate: DateTime(2101)
 		);
 		selectDate(picked);
+	}
+	
+	static Future<void> pickDate(BuildContext context,ValueChanged<DateTime> selectDate) async {
+		DatePicker.showDatePicker(context,
+			showTitleActions: true,
+			onChanged: (date) {
+			}, onConfirm: (date) {
+				selectDate(date);
+			}, currentTime: DateTime.now(), locale: LocaleType.zh);
 	}
 	
 }
