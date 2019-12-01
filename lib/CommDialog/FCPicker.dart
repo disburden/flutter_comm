@@ -126,7 +126,10 @@ class FCPicker {
 			onChanged: (date) {
 			}, onConfirm: (date) {
 				selectDate(date);
-			}, currentTime: DateTime.now(), locale: LocaleType.zh);
+			},
+			currentTime: DateTime.now(),
+			minTime: DateTime(1930),
+			locale: LocaleType.zh);
 	}
 	
 }
