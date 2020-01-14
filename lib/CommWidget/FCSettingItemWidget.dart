@@ -1,8 +1,8 @@
 
 
 import 'package:flutter/material.dart';
-import 'package:flutter_comm/CommImage//FCConstantImages.dart';
-import 'package:flutter_comm/CommImage//FCImageConver.dart';
+import 'package:flutter_comm/CommImage/FCConstantImages.dart';
+import 'package:flutter_comm/CommImage/FCImageConver.dart';
 
 class FCSettingItemWidget extends StatelessWidget {
 	final int index;
