@@ -20,6 +20,7 @@ dependencies:
 
   # 日期选择器
   flutter_datetime_picker: ^1.2.8
+  flutter_cupertino_date_picker: ^1.0.12
 
   # 文件存储
   path_provider: ^1.3.0

@@ -33,6 +33,9 @@ class _MyHomePageState extends State<MyHomePage> {
 	
 	
 	void _incrementCounter() {
+		FCPicker.pickDateTime(context, (_dt){
+			print("dt:$_dt");
+		});
 	}
 	
 	@override

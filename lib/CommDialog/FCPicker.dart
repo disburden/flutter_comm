@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
+import 'package:flutter_cupertino_date_picker/flutter_cupertino_date_picker.dart' as cptn;
 
 typedef finishSelect<I,T> = void Function(I idex,T value);
 
@@ -130,6 +131,30 @@ class FCPicker {
 			currentTime: DateTime.now(),
 			minTime: DateTime(1930),
 			locale: LocaleType.zh);
+	}
+	
+	static Future<void> pickDateTime(BuildContext context,ValueChanged<DateTime> selectDate,{DateTime initTime}) async {
+		cptn.DateTimePickerLocale _locale = cptn.DateTimePickerLocale.zh_cn;
+		cptn.DatePicker.showDatePicker(
+			context,
+			minDateTime: DateTime(1930),
+			initialDateTime: initTime==null?DateTime.now():initTime,
+			dateFormat: 'yyyy年M月d日    EEE,H时:m分',
+			locale: _locale,
+//			pickerTheme: DateTimePickerTheme(
+//				showTitle: _showTitle,
+//			),
+			pickerMode: cptn.DateTimePickerMode.datetime, // show TimePicker
+			onCancel: () {
+				debugPrint('onCancel');
+			},
+			onChange: (dateTime, List<int> index) {
+			
+			},
+			onConfirm: (dateTime, List<int> index) {
+				selectDate(dateTime);
+			},
+		);
 	}
 	
 }
