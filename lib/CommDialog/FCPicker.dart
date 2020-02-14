@@ -9,10 +9,10 @@ class FCPicker {
 	final BuildContext ctx;
 	final List<String> dataSource;
 	final finishSelect<int,String> selectDone;
+	int defaultValueIndex;
 
 	TextStyle buttonTextStyle;
-
-	int _selectedColorIndex=0;
+	
 
 	double _kPickerSheetHeight = 216.0;
 	double _kPickerItemHeight = 32.0;
@@ -20,12 +20,13 @@ class FCPicker {
 		@required this.ctx,
 		@required this.dataSource,
 		@required this.selectDone,
+		this.defaultValueIndex,
 		this.buttonTextStyle
 	});
 
 	showPickerDialog() async {
 		final FixedExtentScrollController scrollController =
-		FixedExtentScrollController(initialItem: _selectedColorIndex);
+		FixedExtentScrollController(initialItem: defaultValueIndex ?? 0);
 
 		await showCupertinoModalPopup<void>(
 			context: ctx,
@@ -36,7 +37,7 @@ class FCPicker {
 						itemExtent: _kPickerItemHeight,
 						backgroundColor: CupertinoColors.white,
 						onSelectedItemChanged: (int index) {
-							_selectedColorIndex = index;
+							defaultValueIndex = index;
 						},
 						children: List<Widget>.generate(dataSource.length, (int index) {
 							return Center(child:
@@ -98,7 +99,7 @@ class FCPicker {
 					),
 					GestureDetector(
 						onTap: (){
-							selectDone(_selectedColorIndex,dataSource[_selectedColorIndex]);
+							selectDone(defaultValueIndex,dataSource[defaultValueIndex]);
 							Navigator.of(ctx).pop();
 						},
 						child: Text("确定",style: buttonTextStyle)

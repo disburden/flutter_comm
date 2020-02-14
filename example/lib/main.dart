@@ -33,9 +33,18 @@ class _MyHomePageState extends State<MyHomePage> {
 	
 	
 	void _incrementCounter() {
-		FCPicker.pickDateTime(context, (_dt){
-			print("dt:$_dt");
+		
+		List<String> ds = List.generate(10, (_i){
+			return _i.toString()+"v";
 		});
+		
+		FCPicker(ctx: context,dataSource: ds, selectDone:(_i,_v){
+			print("v:$_v");
+		},defaultValueIndex: 5).showPickerDialog();
+		
+//		FCPicker.pickDateTime(context, (_dt){
+//			print("dt:$_dt");
+//		});
 	}
 	
 	@override
