@@ -122,6 +122,7 @@ class FCPicker {
 		selectDate(picked);
 	}
 	
+	/// 选择日期ios样式(推荐)
 	static Future<void> pickDate(BuildContext context,ValueChanged<DateTime> selectDate) async {
 		DatePicker.showDatePicker(context,
 			showTitleActions: true,
@@ -134,18 +135,26 @@ class FCPicker {
 			locale: LocaleType.zh);
 	}
 	
-	static Future<void> pickDateTime(BuildContext context,ValueChanged<DateTime> selectDate,{DateTime initTime}) async {
+	/// 选择日期和时间
+	/// hideYear参数如果为ture,那么会变成只能选择日期不能选择时间的模式,
+	/// 而且只能选择月份和日期,不能选择年份
+	/// 本来这个功能应该是属于上面pickDate方法
+	/// 但是在控件的showDatePicker没有dateFormat参数,不能修改样式
+	/// 所以放到这里来
+	static Future<void> pickDateTime(BuildContext context,ValueChanged<DateTime> selectDate,{DateTime initTime,bool hideYear=false}) async {
 		cptn.DateTimePickerLocale _locale = cptn.DateTimePickerLocale.zh_cn;
 		cptn.DatePicker.showDatePicker(
 			context,
 			minDateTime: DateTime(1930),
 			initialDateTime: initTime==null?DateTime.now():initTime,
-			dateFormat: 'yyyy年M月d日    EEE,H时:m分',
+			dateFormat: hideYear?'MM月    dd日':'yyyy年M月d日    EEE,H时:m分',
+//			dateFormat: 'yyyy年M月d日    EEE,H时:m分',
 			locale: _locale,
 //			pickerTheme: DateTimePickerTheme(
 //				showTitle: _showTitle,
 //			),
-			pickerMode: cptn.DateTimePickerMode.datetime, // show TimePicker
+			pickerMode: hideYear?cptn.DateTimePickerMode.date:cptn.DateTimePickerMode.datetime, // show TimePicker
+
 			onCancel: () {
 				debugPrint('onCancel');
 			},
