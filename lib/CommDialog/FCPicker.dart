@@ -20,13 +20,13 @@ class FCPicker {
 		@required this.ctx,
 		@required this.dataSource,
 		@required this.selectDone,
-		this.defaultValueIndex,
+		this.defaultValueIndex=0,
 		this.buttonTextStyle
 	});
 
 	showPickerDialog() async {
 		final FixedExtentScrollController scrollController =
-		FixedExtentScrollController(initialItem: defaultValueIndex ?? 0);
+		FixedExtentScrollController(initialItem: defaultValueIndex);
 
 		await showCupertinoModalPopup<void>(
 			context: ctx,
