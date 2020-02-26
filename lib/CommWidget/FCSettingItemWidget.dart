@@ -56,9 +56,15 @@ class FCSettingItemWidget extends StatelessWidget {
 							child: Row(
 								mainAxisAlignment: MainAxisAlignment.end,
 								children: <Widget>[
-									Offstage(
-										offstage: subWidget == null,
-										child: subWidget,
+//									Offstage(
+//										offstage: subWidget == null,
+//										child: subWidget,
+//									),
+									Expanded(
+										child:Offstage(
+											offstage: subWidget == null,
+											child:subWidget
+										),
 									),
 									Offstage(
 										offstage: needRightArrow == false,
