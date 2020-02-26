@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:flutter_comm/CommImage/FCConstantImages.dart';
 import 'package:flutter_comm/CommImage/FCImageConver.dart';
@@ -13,16 +11,19 @@ class FCSettingItemWidget extends StatelessWidget {
 	final Widget subWidget;
 	final bool needRightArrow;
 	final EdgeInsets aPadding;
+	final double height;
 	final TextStyle titleStyle;
 	final Color backgroundColor;
 	
 	FCSettingItemWidget(this.title,
 		
 		{
-			this.aPadding = const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+//			this.aPadding = const EdgeInsets.symmetric(horizontal: 16, vertical: 44),
+			this.aPadding = EdgeInsets.zero,
 			this.index = 0,
 			this.titleStyle,
 			this.iconFilename,
+			this.height = 40,
 			this.extraInfo,
 			this.onClick,
 			this.subWidget,
@@ -35,6 +36,7 @@ class FCSettingItemWidget extends StatelessWidget {
 			decoration: BoxDecoration(
 				color: backgroundColor
 			),
+			height: height,
 			child: Padding(
 				padding: aPadding,
 				child: Row(
@@ -54,22 +56,22 @@ class FCSettingItemWidget extends StatelessWidget {
 						// 附加视图 -- 尾部>图标
 						Expanded(
 							child: Row(
-								mainAxisAlignment: MainAxisAlignment.end,
+//								mainAxisAlignment: MainAxisAlignment.end,
 								children: <Widget>[
 //									Offstage(
 //										offstage: subWidget == null,
 //										child: subWidget,
 //									),
 									Expanded(
-										child:Offstage(
-											offstage: subWidget == null,
-											child:subWidget
+										child: Offstage(
+											offstage: subWidget==null,
+											child: subWidget
 										),
 									),
 									Offstage(
 										offstage: needRightArrow == false,
 										child: Padding(
-											padding: const EdgeInsets.only(left:8.0),
+											padding: const EdgeInsets.only(left: 8.0),
 											child: SizedBox(
 												height: 12,
 												width: 7,

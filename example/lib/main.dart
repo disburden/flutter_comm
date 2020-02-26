@@ -1,3 +1,5 @@
+//import 'dart:html';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_comm/flutter_comm.dart';
 import 'package:dartcomm/dartcomm.dart';
@@ -57,6 +59,12 @@ class _MyHomePageState extends State<MyHomePage> {
 		TextEditingController _ctrl = TextEditingController();
 		_ctrl.text = "disburden";
 		
+		final TextStyle titleStyle = TextStyle(
+			fontSize: 14
+		);
+		final TextStyle hintStyle = titleStyle;
+		final EdgeInsets padding = EdgeInsets.symmetric(horizontal: 16, vertical: 0);
+		
 		FCIconNoti inoti = FCIconNoti(
 			icon: Icon(Icons.print),
 			title: '注意了',
@@ -87,8 +95,66 @@ class _MyHomePageState extends State<MyHomePage> {
 							style: ImageButtonStyle.topImageButtonText,
 							padding: EdgeInsets.zero,
 						),
-						FCSettingItemWidget("hoho"),
-						FCSettingItemWidget("xixi"),
+						FCSettingItemWidget("hoho",aPadding: padding,subWidget: Text("oo",textAlign: TextAlign.right),),
+						FCSettingItemWidget("xixi",aPadding: padding,subWidget: Text("ii",textAlign: TextAlign.right,),),
+						FCSettingItemWidget("职位", titleStyle: titleStyle,
+							aPadding: padding,
+							needRightArrow: true,
+							subWidget: TextField(
+								readOnly: true,
+								keyboardType: TextInputType.text,
+								textAlign: TextAlign.right,
+								decoration: InputDecoration(
+									isDense: true,
+									hintText: "请输入",
+									hintStyle: hintStyle,
+									border: InputBorder.none,
+//											contentPadding: EdgeInsets.only(top: 1),
+								),
+								style: titleStyle,
+							),
+						),
+						FCLine(height: 1, leftIndent: 16, rightIndent: 16),
+						FCSettingItemWidget(
+							"姓名",
+							titleStyle: titleStyle,
+							aPadding: padding,
+							needRightArrow: true,
+							subWidget: TextField(
+								keyboardType: TextInputType.text,
+								textAlign: TextAlign.right,
+								decoration: InputDecoration(
+									isDense: true,
+									hintText: "请输入",
+									hintStyle: hintStyle,
+									border: InputBorder.none,
+//																	contentPadding: EdgeInsets.only(top: 1),
+								),
+								style: titleStyle,
+							),
+						),
+						FCLine(height: 1, leftIndent: 16, rightIndent: 16),
+						FCSettingItemWidget(
+							"姓名",
+							titleStyle: titleStyle,
+							aPadding: padding,
+							needRightArrow: false,
+							subWidget: Padding(
+							  padding: padding,
+							  child: TextField(
+							  	keyboardType: TextInputType.text,
+							  	textAlign: TextAlign.right,
+							  	decoration: InputDecoration(
+							  		isDense: true,
+							  		hintText: "请输入",
+							  		hintStyle: hintStyle,
+							  		border: InputBorder.none,
+//																	contentPadding: EdgeInsets.only(top: 1),
+							  	),
+							  	style: titleStyle,
+							  ),
+							),
+						),
 						FCLine(),
 
 //						Expanded(
