@@ -12,14 +12,14 @@ class FCSettingItemWidget extends StatelessWidget {
 	final VoidCallback onClick;
 	final Widget subWidget;
 	final bool needRightArrow;
-	final EdgeInsets padding;
+	final EdgeInsets aPadding;
 	final TextStyle titleStyle;
 	final Color backgroundColor;
 	
 	FCSettingItemWidget(this.title,
 		
 		{
-			this.padding = const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+			this.aPadding = const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
 			this.index = 0,
 			this.titleStyle,
 			this.iconFilename,
@@ -36,7 +36,7 @@ class FCSettingItemWidget extends StatelessWidget {
 				color: backgroundColor
 			),
 			child: Padding(
-				padding: padding,
+				padding: aPadding,
 				child: Row(
 					crossAxisAlignment: CrossAxisAlignment.center,
 					children: <Widget>[
