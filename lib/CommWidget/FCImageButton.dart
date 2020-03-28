@@ -15,11 +15,11 @@ class FCImageButton extends StatefulWidget {
 	String flag;
 	
 	FCImageButton({
-		this.image,
-		this.text,
-		this.padding,
-		this.gapBetweenImageAndText,
-		this.style,
+		@required this.image,
+		@required this.text,
+		this.padding = const EdgeInsets.all(0),
+		this.gapBetweenImageAndText=8,
+		this.style = ImageButtonStyle.topImageButtonText,
 		this.onClick,
 		this.tag = -1,
 		this.flag = "",
@@ -30,6 +30,8 @@ class FCImageButton extends StatefulWidget {
 }
 
 class _FCImageButtonState extends State<FCImageButton> {
+	
+
 	
 	Widget createButton() {
 		switch (widget.style) {
