@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class FWLongButton extends StatelessWidget {
+class FCLongButton extends StatelessWidget {
 	final String text;
 	final VoidCallback onPressed;
 	final Color bgColor;
@@ -9,7 +9,7 @@ class FWLongButton extends StatelessWidget {
 	final double height;
 	final double roundedCornerRadius;
 	
-	FWLongButton({@required this.text,
+	FCLongButton({@required this.text,
 		@required this.onPressed,
 		this.bgColor = const Color(0x33000000),
 		this.textColor = Colors.white,
