@@ -9,6 +9,9 @@ export 'FCAlignPadding.dart';
 /// 设置组件圆角
 export 'FCRoundedCorner.dart';
 
+/// 长的按钮
+export 'FCLongButton.dart';
+
 /// 用textField制作textView,因为flutter自己没有textview组件
 export 'FCTextView.dart';
 
