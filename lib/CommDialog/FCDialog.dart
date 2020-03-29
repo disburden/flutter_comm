@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:dartcomm/dartcomm.dart';
+
 import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 import 'FCPicker.dart';
 
@@ -48,12 +49,12 @@ Future<Null> FCDialogShowJhNormal({@required BuildContext context}) async {
 OverlayEntry overlayEntry;
 
 /// 显示加载菊花,有黑色半透明的背景
-FCDialogShowJhTransparent({@required BuildContext context,Widget child}) async {
+FCDialogShowJhTransparent({@required BuildContext context, Widget child}) async {
 	_dialogType = DialogType.overlay;
 	var overlayState = Overlay.of(context);
 	
 	overlayEntry = new OverlayEntry(builder: (context) {
-		return child==null?Center(child: CircularProgressIndicator()):child;
+		return child == null ? Center(child: CircularProgressIndicator()) : child;
 	});
 	
 	overlayState.insert(overlayEntry);
@@ -360,10 +361,13 @@ FCDialogPickerDateInterval(BuildContext context,
 												showTitleActions: true,
 												onChanged: (date) {
 //														print('change ${date.runtimeType}');
-												}, onConfirm: (_date) {
+												},
+												onConfirm: (_date) {
 													b = _date;
 													state(() {});
-												}, currentTime: DateTime.now(), locale: LocaleType.zh);
+												},
+												currentTime: DateTime.now(),
+												locale: LocaleType.zh);
 										},
 										behavior: HitTestBehavior.opaque,
 										child: Row(
@@ -387,10 +391,13 @@ FCDialogPickerDateInterval(BuildContext context,
 												showTitleActions: true,
 												onChanged: (date) {
 //														print('change ${date.runtimeType}');
-												}, onConfirm: (_date) {
+												},
+												onConfirm: (_date) {
 													e = _date;
 													state(() {});
-												}, currentTime: DateTime.now(), locale: LocaleType.zh);
+												},
+												currentTime: DateTime.now(),
+												locale: LocaleType.zh);
 										},
 										behavior: HitTestBehavior.opaque,
 										child: Row(
@@ -434,6 +441,7 @@ FCDialogPickerDateInterval(BuildContext context,
 			);
 		});
 }
+
 FCDialogPickerDateIntervalOld(BuildContext context,
 	DateIntervalDone selectedDone,
 	{
