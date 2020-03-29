@@ -19,7 +19,7 @@ dependencies:
   flutter_image_compress: ^0.6.3
 
   # 日期选择器
-  flutter_datetime_picker: ^1.2.8
+  flutter_datetime_picker: 1.2.8
   flutter_cupertino_date_picker: ^1.0.12
 
   # 文件存储
@@ -28,7 +28,7 @@ dependencies:
   dartcomm:
     git:
       url: https://github.com/disburden/dartcomm.git
-      ref: 6a0e2a755a4035e7f11c7bd33386ee0850190937
+      ref: master
 
 dev_dependencies:
   flutter_test:
