@@ -30,6 +30,9 @@ dependencies:
       url: https://github.com/disburden/dartcomm.git
       ref: master
 
+  #元祖
+  tuple: ^1.0.3
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
