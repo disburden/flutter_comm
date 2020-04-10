@@ -50,8 +50,6 @@ class _FCSpecifyHeightTextFieldState extends State<FCSpecifyHeightTextField> {
 							),
 							decoration: InputDecoration(
 								isDense: true,
-								fillColor: Colors.green,
-								filled: true,
 								contentPadding: EdgeInsets.symmetric(vertical: _verticalPadding)
 							),
 						),
