@@ -34,3 +34,6 @@ export 'FCIconNoti.dart';
 
 /// 带图标的按钮
 export 'FCImageButton.dart';
+
+/// 可以指定高度的textfield
+export 'FCSpecifyHeightTextField.dart';

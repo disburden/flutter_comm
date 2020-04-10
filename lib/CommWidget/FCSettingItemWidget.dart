@@ -56,12 +56,7 @@ class FCSettingItemWidget extends StatelessWidget {
 						// 附加视图 -- 尾部>图标
 						Expanded(
 							child: Row(
-//								mainAxisAlignment: MainAxisAlignment.end,
 								children: <Widget>[
-//									Offstage(
-//										offstage: subWidget == null,
-//										child: subWidget,
-//									),
 									Expanded(
 										child: Offstage(
 											offstage: subWidget==null,
