@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
+import 'package:flutter_datetime_picker/flutter_datetime_picker.dart' as dp;
 import 'package:flutter_cupertino_date_picker/flutter_cupertino_date_picker.dart' as cptn;
 
 typedef finishSelect<I,T> = void Function(I idex,T value);
@@ -124,7 +124,7 @@ class FCPicker {
 	
 	/// 选择日期ios样式(推荐)
 	static Future<void> pickDate(BuildContext context,ValueChanged<DateTime> selectDate) async {
-		DatePicker.showDatePicker(context,
+		dp.DatePicker.showDatePicker(context,
 			showTitleActions: true,
 			onChanged: (date) {
 			}, onConfirm: (date) {
@@ -132,7 +132,7 @@ class FCPicker {
 			},
 			currentTime: DateTime.now(),
 			minTime: DateTime(1930),
-			locale: LocaleType.zh);
+			locale: dp.LocaleType.zh);
 	}
 	
 	/// 选择日期和时间

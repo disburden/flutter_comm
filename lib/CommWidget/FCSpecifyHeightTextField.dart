@@ -5,11 +5,13 @@ class FCSpecifyHeightTextField extends StatefulWidget {
 	final TextEditingController ctl;
 	final double specifyHeight;
 	final TextStyle textStyle;
+	final String hintStr;
 	
 	FCSpecifyHeightTextField({
 		this.ctl,
 		this.specifyHeight,
-		this.textStyle
+		this.textStyle,
+		this.hintStr
 	});
 	
 	@override
@@ -50,7 +52,8 @@ class _FCSpecifyHeightTextFieldState extends State<FCSpecifyHeightTextField> {
 							),
 							decoration: InputDecoration(
 								isDense: true,
-								contentPadding: EdgeInsets.symmetric(vertical: _verticalPadding)
+								contentPadding: EdgeInsets.symmetric(vertical: _verticalPadding),
+								hintText: widget.hintStr
 							),
 						),
 					),
