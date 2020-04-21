@@ -19,8 +19,8 @@ dependencies:
    flutter_image_compress: ^0.6.3
 
    # 日期选择器
-   flutter_cupertino_date_picker:
-      git: 
+   flutter_cupertino_date_picker: 
+      git:
          url: https://github.com/dylanwuzh/flutter-cupertino-date-picker.git
          ref: 920eb16c0b7295dda86a6d849482af90a71bda8c
 
