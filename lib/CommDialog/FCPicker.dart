@@ -142,6 +142,7 @@ class FCPicker {
 			initialDateTime: DateTime.now(),
 			minDateTime: DateTime(1930),
 			locale: _locale,
+			dateFormat: 'yyyy年 MM月 dd日',
 		);
 	}
 	
