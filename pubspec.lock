@@ -74,12 +74,10 @@ packages:
   flutter_cupertino_date_picker:
     dependency: "direct main"
     description:
-      path: "."
-      ref: "920eb16c0b7295dda86a6d849482af90a71bda8c"
-      resolved-ref: "920eb16c0b7295dda86a6d849482af90a71bda8c"
-      url: "https://github.com/dylanwuzh/flutter-cupertino-date-picker.git"
-    source: git
-    version: "1.0.12"
+      name: flutter_cupertino_date_picker
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "1.0.13"
   flutter_image_compress:
     dependency: "direct main"
     description:
