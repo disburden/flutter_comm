@@ -46,12 +46,17 @@ class _MyHomePageState extends State<MyHomePage> {
 		
 		DateTime dt = DateTime(1999,3,13);
 	
-		FCPicker.pickDateTime(context, (_dt){
+//		FCPicker.pickDateTime(context, (_dt){
+//			print("dt:$_dt");
+//			DateTime dt = DateTime(1999,_dt.month,_dt.day);
+//
+//			print("dtt:$dt");
+//		},hideYear: true,initTime: dt);
+	
+		FCPicker.pickDate(context, (_dt){
 			print("dt:$_dt");
-			DateTime dt = DateTime(1999,_dt.month,_dt.day);
-			
-			print("dtt:$dt");
-		},hideYear: true,initTime: dt);
+		});
+	
 	}
 	
 	@override

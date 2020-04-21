@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:dartcomm/dartcomm.dart';
 
-import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
+import 'package:flutter_cupertino_date_picker/flutter_cupertino_date_picker.dart';
 import 'FCPicker.dart';
 
 
@@ -357,17 +357,15 @@ FCDialogPickerDateInterval(BuildContext context,
 								children: <Widget>[
 									GestureDetector(
 										onTap: () {
-											DatePicker.showDatePicker(context,
-												showTitleActions: true,
-												onChanged: (date) {
-//														print('change ${date.runtimeType}');
-												},
-												onConfirm: (_date) {
-													b = _date;
-													state(() {});
-												},
-												currentTime: DateTime.now(),
-												locale: LocaleType.zh);
+											DateTimePickerLocale _locale = DateTimePickerLocale.zh_cn;
+											DatePicker.showDatePicker(context, onConfirm: (dt, idx) {
+												b=dt;
+												state(() {});
+											},
+												initialDateTime: DateTime.now(),
+												locale: _locale,
+											);
+										
 										},
 										behavior: HitTestBehavior.opaque,
 										child: Row(
@@ -387,17 +385,14 @@ FCDialogPickerDateInterval(BuildContext context,
 									),),
 									GestureDetector(
 										onTap: () {
-											DatePicker.showDatePicker(context,
-												showTitleActions: true,
-												onChanged: (date) {
-//														print('change ${date.runtimeType}');
-												},
-												onConfirm: (_date) {
-													e = _date;
-													state(() {});
-												},
-												currentTime: DateTime.now(),
-												locale: LocaleType.zh);
+											DateTimePickerLocale _locale = DateTimePickerLocale.zh_cn;
+											DatePicker.showDatePicker(context, onConfirm: (dt, idx) {
+												e=dt;
+												state(() {});
+											},
+												initialDateTime: DateTime.now(),
+												locale: _locale,
+											);
 										},
 										behavior: HitTestBehavior.opaque,
 										child: Row(

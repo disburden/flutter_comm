@@ -1,33 +1,33 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_datetime_picker/flutter_datetime_picker.dart' as dp;
-import 'package:flutter_cupertino_date_picker/flutter_cupertino_date_picker.dart' as cptn;
+import 'package:flutter_cupertino_date_picker/flutter_cupertino_date_picker.dart';
 
-typedef finishSelect<I,T> = void Function(I idex,T value);
+typedef finishSelect<I, T> = void Function(I idex, T value);
 
 class FCPicker {
 	final BuildContext ctx;
 	final List<String> dataSource;
-	final finishSelect<int,String> selectDone;
+	final finishSelect<int, String> selectDone;
 	int defaultValueIndex;
-
+	
 	TextStyle buttonTextStyle;
 	
-
+	
 	double _kPickerSheetHeight = 216.0;
 	double _kPickerItemHeight = 32.0;
+	
 	FCPicker({
 		@required this.ctx,
 		@required this.dataSource,
 		@required this.selectDone,
-		this.defaultValueIndex=0,
+		this.defaultValueIndex = 0,
 		this.buttonTextStyle
 	});
-
+	
 	showPickerDialog() async {
 		final FixedExtentScrollController scrollController =
 		FixedExtentScrollController(initialItem: defaultValueIndex);
-
+		
 		await showCupertinoModalPopup<void>(
 			context: ctx,
 			builder: (BuildContext context) {
@@ -41,7 +41,7 @@ class FCPicker {
 						},
 						children: List<Widget>.generate(dataSource.length, (int index) {
 							return Center(child:
-								Text(dataSource[index]),
+							Text(dataSource[index]),
 							);
 						}),
 					),
@@ -49,11 +49,11 @@ class FCPicker {
 			},
 		);
 	}
-
-
+	
+	
 	Widget _buildBottomPicker(Widget picker) {
 		return Container(
-			height: _kPickerSheetHeight+40,
+			height: _kPickerSheetHeight + 40,
 			padding: const EdgeInsets.only(top: .0),
 			color: CupertinoColors.white,
 			child: DefaultTextStyle(
@@ -63,8 +63,7 @@ class FCPicker {
 				),
 				child: GestureDetector(
 					// Blocks taps from propagating to the modal sheet and popping.
-					onTap: () {
-					},
+					onTap: () {},
 					child: SafeArea(
 						top: false,
 //						child: picker,
@@ -84,25 +83,25 @@ class FCPicker {
 			),
 		);
 	}
-
-	Widget _pickerToolsBar(){
+	
+	Widget _pickerToolsBar() {
 		return Padding(
 			padding: const EdgeInsets.symmetric(horizontal: 16),
 			child: Row(
 				mainAxisAlignment: MainAxisAlignment.spaceBetween,
 				children: <Widget>[
 					GestureDetector(
-						onTap: (){
+						onTap: () {
 							Navigator.of(ctx).pop();
 						},
-						child: Text("取消",style: buttonTextStyle)
+						child: Text("取消", style: buttonTextStyle)
 					),
 					GestureDetector(
-						onTap: (){
-							selectDone(defaultValueIndex,dataSource[defaultValueIndex]);
+						onTap: () {
+							selectDone(defaultValueIndex, dataSource[defaultValueIndex]);
 							Navigator.of(ctx).pop();
 						},
-						child: Text("确定",style: buttonTextStyle)
+						child: Text("确定", style: buttonTextStyle)
 					),
 				],
 			),
@@ -112,7 +111,8 @@ class FCPicker {
 	
 	/// 选择日期
 	ValueChanged<DateTime> selectDate;
-	static Future<void> pickDateOld(BuildContext context,ValueChanged<DateTime> selectDate) async {
+	
+	static Future<void> pickDateOld(BuildContext context, ValueChanged<DateTime> selectDate) async {
 		final DateTime picked = await showDatePicker(
 			context: context,
 			initialDate: DateTime.now(),
@@ -123,16 +123,26 @@ class FCPicker {
 	}
 	
 	/// 选择日期ios样式(推荐)
-	static Future<void> pickDate(BuildContext context,ValueChanged<DateTime> selectDate) async {
-		dp.DatePicker.showDatePicker(context,
-			showTitleActions: true,
-			onChanged: (date) {
-			}, onConfirm: (date) {
-				selectDate(date);
-			},
-			currentTime: DateTime.now(),
-			minTime: DateTime(1930),
-			locale: dp.LocaleType.zh);
+	static Future<void> pickDate(BuildContext context, ValueChanged<DateTime> selectDate) async {
+	
+//		dp.DatePicker.showDatePicker(context,
+//			showTitleActions: true,
+//			onChanged: (date) {
+//			}, onConfirm: (date) {
+//				selectDate(date);
+//			},
+//			currentTime: DateTime.now(),
+//			minTime: DateTime(1930),
+//			locale: dp.LocaleType.zh);
+		
+		DateTimePickerLocale _locale = DateTimePickerLocale.zh_cn;
+		DatePicker.showDatePicker(context, onConfirm: (dt, idx) {
+			selectDate(dt);
+		},
+			initialDateTime: DateTime.now(),
+			minDateTime: DateTime(1930),
+			locale: _locale,
+		);
 	}
 	
 	/// 选择日期和时间
@@ -141,20 +151,21 @@ class FCPicker {
 	/// 本来这个功能应该是属于上面pickDate方法
 	/// 但是在控件的showDatePicker没有dateFormat参数,不能修改样式
 	/// 所以放到这里来
-	static Future<void> pickDateTime(BuildContext context,ValueChanged<DateTime> selectDate,{DateTime initTime,bool hideYear=false}) async {
-		cptn.DateTimePickerLocale _locale = cptn.DateTimePickerLocale.zh_cn;
-		cptn.DatePicker.showDatePicker(
+	static Future<void> pickDateTime(BuildContext context, ValueChanged<DateTime> selectDate, {DateTime initTime, bool hideYear = false}) async {
+		DateTimePickerLocale _locale = DateTimePickerLocale.zh_cn;
+		DatePicker.showDatePicker(
 			context,
 			minDateTime: DateTime(1930),
-			initialDateTime: initTime==null?DateTime.now():initTime,
-			dateFormat: hideYear?'MM月    dd日':'yyyy年M月d日    EEE,H时:m分',
+			initialDateTime: initTime == null ? DateTime.now() : initTime,
+			dateFormat: hideYear ? 'MM月    dd日' : 'yyyy年M月d日    EEE,H时:m分',
 //			dateFormat: 'yyyy年M月d日    EEE,H时:m分',
 			locale: _locale,
 //			pickerTheme: DateTimePickerTheme(
 //				showTitle: _showTitle,
 //			),
-			pickerMode: hideYear?cptn.DateTimePickerMode.date:cptn.DateTimePickerMode.datetime, // show TimePicker
-
+			pickerMode: hideYear ? DateTimePickerMode.date : DateTimePickerMode.datetime,
+			// show TimePicker
+			
 			onCancel: () {
 				debugPrint('onCancel');
 			},
