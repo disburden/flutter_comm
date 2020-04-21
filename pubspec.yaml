@@ -20,7 +20,7 @@ dependencies:
 
    # 日期选择器
    flutter_cupertino_date_picker:
-      git:
+      git: 
          url: https://github.com/dylanwuzh/flutter-cupertino-date-picker.git
          ref: 920eb16c0b7295dda86a6d849482af90a71bda8c
 
