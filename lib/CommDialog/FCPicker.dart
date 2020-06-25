@@ -123,7 +123,7 @@ class FCPicker {
 	}
 	
 	/// 选择日期ios样式(推荐)
-	static Future<void> pickDate(BuildContext context, ValueChanged<DateTime> selectDate) async {
+	static Future<void> pickDate(BuildContext context, ValueChanged<DateTime> selectDate,{DateTime initDate}) async {
 	
 //		dp.DatePicker.showDatePicker(context,
 //			showTitleActions: true,
@@ -139,7 +139,7 @@ class FCPicker {
 		DatePicker.showDatePicker(context, onConfirm: (dt, idx) {
 			selectDate(dt);
 		},
-			initialDateTime: DateTime.now(),
+			initialDateTime: initDate ?? DateTime.now(),
 			minDateTime: DateTime(1930),
 			locale: _locale,
 			dateFormat: 'yyyy年 MM月 dd日',
