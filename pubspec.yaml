@@ -27,7 +27,7 @@ dependencies:
    dartcomm:
       git:
          url: https://github.com/disburden/dartcomm.git
-         ref: master
+         ref: 0be2529aa6dee026803906dfc041e8dc0833b03c
 
    #元祖
    tuple: ^1.0.3
